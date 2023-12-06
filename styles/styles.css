@@ -1,0 +1,1015 @@
+/* Fonts being used by the oba */
+@font-face {
+    font-family: AvenirRoman;
+    src: url(../font/Avenir-Roman.ttf);
+    /*value: auto;*/
+    /*initial:auto;*/
+}
+
+@font-face {
+    font-family: AvenirMedium;
+    src: url(../font/Avenir-medium.ttf);
+}
+
+@font-face {
+    font-family: AvenirBlack;
+    src: url(../font/Avenir-Black.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+:root {
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7; /*achtergrondkleur*/
+    --sidebar-color-white: #FFFFFF;
+    --background-color-buttons-white: #FFFFFF; /*dit teogeovoegd  kleur van de oba*/
+    --primary-color-red: #E61C24; /*kleur van de oba*/
+    --primary-color-light-licht-blauwe-achtergrondkleur: #F6F5FF;
+    --toggle-color-licht-grijs: #D9D9D9; /*kleur van de oba*/
+    --text-color-zwart: #000000; /*kleur van de oba**/
+    /*#000000*/
+    /*oude kleur  --text-color: #707070;*/
+
+    /* ====== Transition ====== */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+
+
+    /*eigen custom proporties*/
+    /*    border*/
+    --border-color-line: 0.1em solid #000000;
+    /*afstand margin*/
+    --margin-1em: 1em;
+    --margin-top-3em: 3em;
+    --margin-top-2em: 2em;
+    --margin-bottom-1em: 1em;
+
+    /*    widt*/
+    --with-15em: 15em;
+
+    /*gridtemplate*/
+    --grid-template-areas-indeling:"item1 item1"
+    "item2 item3"
+    "item4 item4";
+
+    --grid-template-columns-indeling: 1fr 1fr;
+
+
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    font-family: AvenirMedium, Arial, sans-serif, sans-serif;
+}
+
+/* SCROLLBAR */
+/* BRON: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS-scrollbars-styling */
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(61, 61, 61, .418);
+    border-radius: 4px;
+}
+
+::selection {
+    background-color: var(--primary-color-red);
+    color: #fff;
+}
+
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color-white: #242526;
+    /*--primary-color: #3a3b3c;*/
+    --primary-color-light-licht-blauwe-achtergrondkleur: #3a3b3c;
+    --toggle-color-licht-grijs: #fff;
+    --text-color-zwart: #fff; /*dit doet niks #ccc*/
+    /*color: white;*/
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 275px;
+    padding: 10px 14px;
+    background: var(--sidebar-color-white);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* ===== Reusable code - Here ===== */
+.sidebar li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+    color: var(--text-color-zwart);
+    transition: var(--tran-03);
+}
+
+.sidebar .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .text-long,
+.sidebar .icon {
+    color: var(--text-color-zwart);
+    transition: var(--tran-03);
+}
+
+.sidebar .text-long {
+    font-size: 17px;
+    font-weight: 500;
+    resize: none;
+    opacity: 1;
+    /*width: 6em;*/
+}
+
+.sidebar.close .text-long {
+    resize: none;
+    opacity: 0;
+}
+
+/* =========================== */
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+header .image-text .name {
+    /*margin-top: 2px;*/
+    margin-top: var(--margin-top-2em);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header .image-text .profession {
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img {
+    width: 3rem;
+    border-radius: 180px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color-red);
+    color: var(--sidebar-color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color-zwart);
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu {
+    /*margin-top: 18px;*/
+}
+
+.sidebar li.search-box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light-licht-blauwe-achtergrondkleur);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sidebar li.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light-licht-blauwe-achtergrondkleur);
+    color: var(--text-color-zwart);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.sidebar li a {
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color-red);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color-white);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color-zwart);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+    /*overflow: auto;*/
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .menu-bar .mode {
+    border-radius: 6px;
+    background-color: var(--primary-color-light-licht-blauwe-achtergrondkleur);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon {
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i {
+    position: absolute;
+}
+
+.mode .sun-moon i.sun {
+    opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+.menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color-licht-grijs);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color-white);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.home {
+    position: absolute;
+    top: 0;
+    left: 315px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    transition: var(--tran-05);
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color-zwart);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home {
+    left: 126px;
+    height: 100vh;
+    width: calc(100% - 78px);
+    font-size: 1.1em;
+}
+
+body.dark .home .text {
+    color: var(--text-color-zwart);
+}
+
+/*boetetabel*/
+/*dit is de naam boek en datum inleveren*/
+th {
+    /*color: #FFFFFF;*/
+    background-color: var(--sidebar-color-white);
+    border: var(--border-color-line);
+    /*font-family: AvenirMedium;*/
+    /*border: 1px solid #dddddd; !*  hier word een randje meegegeven aan de th  *!*/
+    font-size: 1em;
+    line-height: 1.5;
+
+
+}
+
+/*dit zijn de celblockej*/
+td {
+    background-color: var(--sidebar-color-white);
+    border: var(--border-color-line);
+    /*font-family: AvenirMedium;*/
+    font-size: 1em;
+    line-height: 1.5;
+    margin: var(--margin-1em);
+}
+
+/*algemeen*/
+.showresults { /*verbergen van showresults met boeken een volledige div met daarin de 2 grid item-filters*/
+    display: none;
+    color: var(--text-color-zwart);
+}
+
+
+/*volgorde is van boven naar beneden net als met de html*/
+@media (min-width: 0em)  and (max-width: 47em) {
+
+    .grid-container{
+        display: grid; /*1 grote container met daarin 4 kinderen*/
+        /*grid-gap: 1em;*/
+        grid-template-areas:
+            "zoekvak"
+            "inleiding "/*regel1*/
+        "boeken-overzicht-boeken"
+            "meer-info-filters";
+
+        /*grid-template-columns: 1fr;*/
+
+
+        .grid-item, .grid-item-filter { /*dit zijn de 3 kinderen met daarin de inhoud ide steeds meebeweegt*/
+            padding: 1em;
+
+
+        }
+
+        &.grid-item:nth-child(1) { /*inleiding-zoekvak*/
+            grid-area: zoekvak;
+            /*margin-bottom: var(--margin-bottom-1em);*/
+            /*margin: 0 1em 0 0;*/
+
+        }
+
+        @media (min-width: 1em)  and (max-width: 47em) {
+            /*media query voor tekst in de inleiding grit item1 linksboven*/
+            .to-long-text-margin {
+                margin-bottom: 1em;
+
+            }
+
+            .margin-filter {
+                margin-top: 2em;
+            }
+
+
+        }
+
+
+        & ul:nth-child(1) {
+            /*background-color: red;*/
+            /*margin-top: 1em;*/
+            /*margin-left: 1em;*/
+            margin: 1em 1em 1em 1em;
+        }
+
+
+        .grid-item:nth-child(2) { /*meer info*/
+            grid-area: inleiding;
+
+
+        }
+
+        .grid-item:nth-child(3) { /*boete*/
+            grid-area: meer-info-filters;
+        }
+
+        .grid-item:nth-child(4) { /*boete*/
+            grid-area: boeken-overzicht-boeken;
+        }
+
+        .grid-item-filter:nth-child(1), .grid-item-filter:nth-child(2), .grid-item-filter:nth-child(3) {
+            margin-bottom: 2em; /*dit is de onderkant zoekvak en filters en boeken showresults */
+
+
+        }
+
+
+    }
+    .grid-container-filter{
+        display: none; /*1 grote container met daarin 4 kinderen*/
+        /*grid-gap: 1em;*/
+        grid-template-areas:
+            "zoekvak"
+            "inleiding "/*regel1*/
+        "boeken-overzicht-boeken"
+            "meer-info-filters";
+    }
+
+}
+p:nth-child(2) { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+    margin-bottom: var(--margin-bottom-1em);
+    height: 3em;
+}
+
+
+details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
+    /*margin-bottom: var(--margin-bottom-1em);*/
+    margin-bottom: 2em;
+    cursor: pointer;
+}
+
+summary:hover { /*hover over de details van meer info*/
+    background-color: green;
+    color: white;
+    width: 30em;
+}
+
+/*dit zijn de buttons*/
+button, .filter__filterbutton { /*filterbutton staat lager in de forms*/
+    border: none;
+    box-shadow: 10px 5px 5px var(--toggle-color-licht-grijs);
+    background-color: var(--background-color-buttons-white);
+    /*color: #202121;*/
+    /*background-color: #DDFF00;*/
+    font-size: 1em;
+    font-family: AvenirMedium, Arial, sans-serif;
+    border-radius: 6px;
+    margin: var(--margin-1em) 0 0 0.2em;
+    color: #000;
+    text-decoration: none; /*dit is de streep onder de tekst*/
+
+    padding: 0.5rem 14px 0.5rem 0.5rem;
+}
+
+button:hover {
+    background-color: var(--primary-color-red);
+    cursor: pointer;
+    /*text-decoration-color: white;*/
+    color: white;
+}
+
+.filter__input-checkboxes:hover {
+    background-color: var(--primary-color-red);
+    cursor: pointer;
+    /*text-decoration-color: white;*/
+    color: white;
+}
+
+
+/*zoekvak*/
+form label {
+    /*margin-right: 1rem;*/
+    font-family: AvenirMedium, Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*filters*/
+
+.i--search { /*icoon zoeken*/
+    margin-right: 1rem;
+    font-size: 2.5em;
+}
+
+/*zoek icon*/
+
+
+.input-searchbar-form { /*zoekvak zelf*/
+    display: flex;
+    align-items: center;
+    width: 16rem;
+    margin-bottom: 1em;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    outline: 0;
+    margin-right: 1rem;
+    font-size: 1rem;
+
+
+}
+
+/*bem toegepast*/
+#form__input-searchfunciton {
+    display: flex;
+    align-items: center;
+    border: none;
+
+    font-family: AvenirMedium, Arial, sans-serif;
+    font-size: 1rem;
+    /*height: 2.5rem;*/
+}
+
+
+.item-filter { /*afstand tussen de filter buttons*/
+    margin-bottom: 2em;
+}
+
+.input-calender { /*de grootte van het input*/
+    font-size: 1.2em;
+}
+
+
+
+/*forms met daarin bem toegepast*/
+.filter__collaps-open-function-boeken, .filter__collaps-open-funtion-boeken-second, .filter__collaps-open-funtion-boeken-third { /*dit zijn de buttons in de lijst en op deze pagina voor meer info*/
+    display: none;
+}
+
+.filter__input-checkboxes { /*checkboxes grootte*/
+    width: 1.4em;
+    height: 1.5em;
+    vertical-align: middle;
+    margin: 0.5em;
+}
+
+/*einde forms*/
+
+.geen-resultaat{
+    display: none;
+}
+/*verbergen li vanege books*/
+.hide-li-sign {
+    list-style-type: none;
+    margin-bottom: var(--margin-bottom-1em);
+}
+
+
+/*dit zijn a href linkjes*/
+a:nth-child(1) {
+    color: var(--text-color-zwart);
+    text-decoration: underline;
+
+}
+
+a:hover { /*hover over de linkjes*/
+    color: var(--primary-color-red);
+    cursor: pointer;
+}
+
+
+.figure-image-title-book { /*de boeken grote en title*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*bem toegepast*/
+.figure-image-title-book__title-book-link, .figure-image-title-book__books-image { /*bem toegepast*/
+    display: grid;
+    justify-content: left;
+}
+
+/*kleine ipad*/
+@media (min-width: 48em)  and (max-width: 60em) {
+    /*mini ipad*/
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+       var(--grid-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-indeling)
+
+        /*grid-template-columns: var(--grid-template-columns-indeling);*/
+        /*padding: 1em;*/
+
+
+    }
+
+    .grid-container-filter {
+        margin-top: 5em;
+        display: none;
+        grid-template-areas:
+       var(--grid-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-indeling)
+    }
+
+    .to-long-text-margin {
+        margin-bottom: 1em;
+
+    }
+
+    .grid-item:nth-child(1) {
+        grid-area: item1;
+        /*background-color: rgba(88, 255, 83, 0.57);*/
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+    .grid-item:nth-child(2) {
+        grid-area: item2;
+        background-color: #d72d2d;
+        margin-bottom: var(--margin-bottom-1em);
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(3) {
+        grid-area: item4;
+        background-color: #80f6f2;
+        margin-right: 5em;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(4) {
+        grid-area: item3;
+        background-color: #ae8aff;
+        /*grid-template-columns: 10em;*/
+    }
+    .grid-container-filter{
+        display: none;
+        grid-template-areas: "item1 item2";
+        grid-template-columns: var(--grid-template-columns-indeling);
+    }
+    .grid-item-filter:nth-child(1){
+        grid-area: item1;
+        background-color: rgba(88, 255, 83, 0.57);
+    }    .grid-item-filter:nth-child(2){
+             grid-area: item2;
+             background-color: rgba(252, 67, 240, 0.57);
+         }
+    .grid-item-filter:nth-child(2){
+        grid-area: item2;
+        background-color: rgb(227, 22, 22);
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+
+    .figure-image-title-book { /*positioneren van de boeken en de tekst*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+
+    .figure-image-title-book__title-book-link { /*kind van div*/
+        display: grid;
+        align-self: center;
+    }
+}
+
+/*medium ipad is*/
+@media (min-width: 60em)  and (max-width: 80em) {
+    /*mini ipad*/
+    .grid-container {
+        display: grid;
+        grid-template-areas:   var(--grid-template-areas-indeling);
+        grid-template-columns: var(--grid-template-columns-indeling);
+
+
+    }
+    .grid-item:nth-child(1) {
+        grid-area: item1;
+        /*background-color: rgba(88, 255, 83, 0.57);*/
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+    .grid-item:nth-child(2) {
+        grid-area: item2;
+        background-color: #d72d2d;
+        margin-bottom: var(--margin-bottom-1em);
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(3) {
+        grid-area: item4;
+        background-color: #80f6f2;
+        margin-right: 5em;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(4) {
+        grid-area: item3;
+        background-color: #ae8aff;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(1) {
+        margin: 0 1em 0 0;
+    }
+
+    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+        max-width: 30em;
+    }
+
+    .grid-container-filter{
+        display: none;
+        grid-template-areas: "item1 item2";
+        grid-template-columns:var(--grid-template-columns-indeling)
+    }
+    .grid-item-filter:nth-child(1){
+        grid-area: item1;
+        background-color: rgba(88, 255, 83, 0.57);
+    }    .grid-item-filter:nth-child(2){
+             grid-area: item2;
+             background-color: rgba(252, 67, 240, 0.57);
+         }
+
+    .grid-books-blocks { /*dit zijn de boeken die getoond worden*/
+        display: grid;
+        grid-template-areas: "boek1 boek2";
+    }
+
+    .figure-image-title-book { /*positioneren van de boeken en de tekst*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+}
+
+/*kleine laptop*/
+@media (min-width: 80em)and (max-width: 100em) {
+    /*mini ipad*/
+    /*volgorde boven naar beneden zoals in de html ook het geval is*/
+    /*contianer*/
+    .grid-container {
+        display: grid;
+        grid-template-areas:   var(--grid-template-areas-indeling);
+        grid-template-columns: var(--grid-template-columns-indeling);
+        /*1specifiek item container*/
+
+
+    }
+    .grid-item:nth-child(1) {
+        grid-area: item1;
+        /*background-color: rgba(88, 255, 83, 0.57);*/
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+    .grid-item:nth-child(2) {
+        grid-area: item2;
+        background-color: #d72d2d;
+        margin-bottom: var(--margin-bottom-1em);
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(3) {
+        grid-area: item4;
+        background-color: #80f6f2;
+        margin-right: 5em;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(4) {
+        grid-area: item3;
+        background-color: #ae8aff;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(1) {
+        margin: 0 1em 0 0;
+    }
+
+
+    .grid-item:nth-child(1) {
+        margin: 0 1em 0 0;
+    }
+
+    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. tekst */
+        max-width: 35em; /*dit staat ook in de volgende maar niet in de vorige*/
+    }
+
+    /*contianer filter de onderste cotnaienr*/
+    .grid-container-filter{
+        display: none;
+        grid-template-areas: "item1 item2";
+        grid-template-columns:var(--grid-template-columns-indeling)
+    }
+    .grid-item-filter:nth-child(1){
+        grid-area: item1;
+        background-color: rgba(88, 255, 83, 0.57);
+    }    .grid-item-filter:nth-child(2){
+             grid-area: item2;
+             background-color: rgba(252, 67, 240, 0.57);
+         }
+    .grid-item:nth-child(2){
+        grid-area: item2;
+        background-color: rgb(227, 22, 22);
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+
+    .grid-books-blocks {
+        display: grid;
+        grid-template-areas: "boek1 boek2 boek3";
+        gap: 2em;
+    }
+
+    .figure-image-title-book { /*positioneren van de boeken en de tekst*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+}
+
+/*grote laptop*/
+@media (min-width: 100em) {
+    .grid-container {
+        display: grid;
+        grid-template-areas:   var(--grid-template-areas-indeling);
+        /*grid-template-columns: var(--grid-template-columns-indeling);*/
+    }
+
+    .grid-container-filter{
+        display: none;
+        grid-template-areas: "item1 item2";
+        grid-template-columns:var(--grid-template-columns-indeling)
+    }
+    .grid-item-filter:nth-child(1){
+        grid-area: item1;
+        /*background-color: rgba(88, 255, 83, 0.57);*/
+    }    .grid-item-filter:nth-child(2){
+        grid-area: item2;
+        background-color: rgba(252, 67, 240, 0.57);
+    }
+    .grid-item:nth-child(2){
+        grid-area: item2;
+        background-color: rgba(88, 255, 83, 0.57);
+        /*grid-template-columns: 50em;*/
+        margin: 0 1em 0 0;
+    }
+
+    .grid-item:nth-child(2) {
+        grid-area: item2;
+        background-color: #d72d2d;
+        margin-bottom: var(--margin-bottom-1em);
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(3) {
+        grid-area: item4;
+        background-color: #80f6f2;
+        margin-right: 5em;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(4) {
+        grid-area: item3;
+        background-color: #ae8aff;
+        /*grid-template-columns: 10em;*/
+    }
+
+    .grid-item:nth-child(1) {
+        margin: 0 1em 0 0;
+    }
+
+    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+        max-width: 35em;
+    }
+
+
+
+
+
+
+    .grid-books-blocks {
+        display: grid;
+        grid-template-areas: "boek1 boek2 boek3 boek4";
+        gap: 2em;
+    }
+
+    .figure-image-title-book { /*positioneren van de boeken en de tekst*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+.text-boete{
+    transition: all 1s ease-out;
+    translate: 100vw 0;
+    display: none;
+}
+/*als je op de button hover toon dan de tekst vanaf de linkerkant  */
+.button-boeken:hover + .text-boete{
+    transition: 1s;
+    translate:  0 0;
+
+    display: block;
+}
+/*todo een aparte pagina maken voor zoeken oba heeft dat ook als je naar iets zoekt ga je naar zoeken,oba.nl/?=zoekopdracht*/

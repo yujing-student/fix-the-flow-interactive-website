@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="welkompagina van de oba,
+    u bent nu op de wlekompagina van de oba" name="description">
+
+    <!-- Link to CSS -->
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Link to boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="image/favicon-32x32.png" rel="icon" type="image/png">
+
+    <!-- Link to JavaScript script -->
+    <script defer src="./scripts/script.js"></script><!--geen defer vanwege error in w3c validator-->
+
+    <title>zoekpagina</title>
+    <!--    hier werkt de rode knp weer niet oorzaak niet bekend-->
+</head>
+<body>
+<nav class="sidebar close" tabindex="0">
+    <!--https://www.w3.org/WAI/tutorials/menus/structure/-->
+    <header>
+        <div class="image-text">
+            <div class="image">
+                <a href="index.html"> <img alt="Gebruiker-foto" src="image/AmberFoto.jpeg"></a>
+            </div>
+
+            <div class="text nav-text">
+                <p class="name">Amber van de Reijden</p>
+                <p class="profession" tabindex="0">5 jaar lid</p>
+            </div>
+        </div>
+
+        <i aria-label="uitklappen navigatiemenu" class='bx bx-chevron-right toggle' role="button" tabindex="0"></i>
+    </header>
+
+    <div class="menu-bar" tabindex="0">
+        <div class="menu">
+            <ul class="">
+                <li class="search-box">
+                    <i class='bx bx-search icon' tabindex="0"></i>
+                    <label>
+                        <input name="search" placeholder="Zoek..." type="search">
+                        <!--                        <button type="submit"></button>-->
+                    </label>
+                </li>
+            </ul>
+
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="index.html">
+                        <i class='bx bx-home icon'></i>
+                        <span class="text nav-text">Welkom</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://pommelienn.github.io/the-client-website/">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text-long nav-text">Overzicht abonnement</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-home icon'></i>
+                        <span class="text nav-text">Leeslijst</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://wingsvn.github.io/look-and-feel-corporate-identity/">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text-long nav-text">Uitleningen en verlengen</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://annevd.github.io/look-and-feel-corporate-identity/">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Uitleengeschiedenis</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://lisagjh.github.io/look-and-feel-corporate-identity/home.html">
+                        <i class='bx bx-bookmark icon'></i> <span
+                            class="text-long nav-text">Diensten en Producten</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-pie-chart-alt icon'></i>
+                        <span class="text nav-text">Betaalgeschiedenis</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-heart icon'></i>
+                        <span class="text nav-text">Reserveringen</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">Deposito</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text-long nav-text">Tellerstand abonnement</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <ul>
+                <li class="">
+                    <a href="https://pommelienn.github.io/the-client-website/">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Uitloggen</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+</nav>
+<main class="home">
+<h3 tabindex="0">Hier kunt u zoeken naar boeken</h3>
+<form class="input-searchbar-form">
+    <!--                    <button class="search-button">zoek</button>-->
+    <i class="bx bx-search icon i--search" tabindex="0"></i>
+    <input aria-label="zoeken naar boeken" id="form__input-searchfunciton"
+           onkeyup="searchfunction()"
+           placeholder="typ hier uw boek in"
+           type="search">
+</form>
+<div class="grid-container-filter">
+    <!--            <div class="grid-item-filter" tabindex="0">-->
+    <!--&lt;!&ndash;                <h3 tabindex="0">Hier kunt u zoeken naar boeken</h3>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <form class="input-searchbar-form">&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <i class="bx bx-search icon i&#45;&#45;search" onclick="showdivresults()" tabindex="0"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <input aria-label="zoeken naar boeken" id="form__input-searchfunciton"&ndash;&gt;-->
+    <!--&lt;!&ndash;                           onkeyup="searchfunction()"&ndash;&gt;-->
+    <!--&lt;!&ndash;                           placeholder="typ hier uw boek in"&ndash;&gt;-->
+    <!--&lt;!&ndash;                           type="search">&ndash;&gt;-->
+    <!--&lt;!&ndash;                </form>&ndash;&gt;-->
+
+
+
+    <!--            </div>-->
+    <div class="grid-item-filter" tabindex="0">
+        <!--                <div class="grid-filters-functions" tabindex="0">-->
+        <p class="margin-filter"><strong>Filters</strong></p>
+        <p>toegevoegd leeslijst <span class="count-clicks">0 </span></p>
+        <div class="item-filter filter">
+
+            <!--                    <box-icon name='filter-alt' ></box-icon>-->
+            <button aria-pressed="false" class="filter__collapsible-boeken"
+                    tabindex="0"
+                    type="button"><i class='bx bx-filter-alt'></i>Onderwerpen filter
+            </button><!--bem toegepast-->
+
+            <form aria-label="dit is het form met daarin de filter functies die je kan selecteren"
+                  class="filter__collaps-open-function-boeken">
+                <input class="filter__input-checkboxes" data-filter="sport"
+                       id="onderwerp-sport" name="onderwerp-sport"
+                       title="sport" type="checkbox" value="sport">
+                <label class="lable-checkbox" for="onderwerp-sport"> Sport</label><br>
+                <input class="filter__input-checkboxes" data-filter="cultuur"
+                       id="onderwerp-cultuur" name="onderwerp-cultuur"
+                       title="sport" type="checkbox" value="cultuur">
+                <label for="onderwerp-cultuur">Cultuur</label><br>
+                <input class="filter__input-checkboxes" data-filter="kunst"
+                       id="onderwerp-kunst" name="onderwerp-kunst"
+                       title="sport" type="checkbox" value="kunst">
+                <label for="onderwerp-kunst">Kunst</label><br>
+                <input class="filter__input-checkboxes" data-filter="fashion"
+                       id="onderwerp-mode" name="onderwerp-mode"
+                       title="sport" type="checkbox" value="fashion">
+                <label for="onderwerp-mode">Fashion</label><br>
+                <button class="filter__filterbutton" type="button" value="Filter">Filter</button>
+            </form>
+
+        </div>
+        <div class="item-filter filter">
+            <button aria-pressed="false" class="filter__collapsible-boeken-second"
+                    tabindex="0"
+                    type="button"><i class='bx bx-filter-alt'></i>Genre filter
+            </button>
+            <form aria-label="dit is het form met daarin de filter functies die je kan selecteren"
+                  class="filter__collaps-open-funtion-boeken-second">
+                <input class="filter__input-checkboxes" data-filter="sport" id="onderwerp-sport_genre"
+                       name="onderwerp-sport" title="checkbox" type="checkbox" value="sport">
+                <label class="lable-checkbox" for="onderwerp-sport"> Thriller</label><br>
+                <input class="filter__input-checkboxes" data-filter="cultuur" id="onderwerp-cultuur_genre"
+                       name="onderwerp-cultuur" title="checkbox" type="checkbox" value="cultuur">
+                <label for="onderwerp-cultuur">Roman</label><br>
+                <input class="filter__input-checkboxes" data-filter="kunst" id="onderwerp-kunst_genre"
+                       name="onderwerp-kunst" title="checkbox" type="checkbox" value="kunst">
+                <label for="onderwerp-kunst">Misdaad</label><br>
+                <input class="filter__input-checkboxes" data-filter="fashion" id="onderwerp-mode_genre"
+                       name="onderwerp-mode" title="checkbox" type="checkbox" value="fashion">
+                <label for="onderwerp-mode">Voetbal</label><br>
+                <button class="filter__filterbutton" type="button" value="Filter">Filter</button>
+            </form>
+
+        </div>
+        <div class="item-filter filter">
+            <button aria-pressed="false" class="filter__collapsible-boeken-third"
+                    tabindex="0"
+                    type="button"><i class='bx bx-filter-alt'></i> Auteur filter
+
+            </button>
+            <!--        <button>filterfunctie</button>-->
+            <!--    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox-->
+
+            <!--        https://www.w3schools.com/css/css-boxmodel.asp
+            hier naar kijken met chekboxes of als sorteerfunctie activitetien dvd boeken-->
+            <form aria-label="dit is het form met daarin de filter funcites die je kan selecteren"
+                  class="filter__collaps-open-funtion-boeken-third" title="form">
+                <input class="filter__input-checkboxes" data-filter="Evert-meer"
+                       id="Evert-meer" name="onderwerp-sport" title="checkbox"
+                       type="checkbox" value="Evert meer">
+                <label class="lable-checkbox" for="Evert-meer"> Evert Meer</label><br>
+                <input class="filter__input-checkboxes" data-filter="Menno-Pot"
+                       id="Menno-Pot" name="onderwerp-cultuur" title="checkbox"
+                       type="checkbox" value="Menno Pot">
+                <label for="Menno-Pot">Menno Pot</label><br>
+                <input class="filter__input-checkboxes" data-filter="Jaap-visser"
+                       id="Jaap-visser" name="onderwerp-kunst" title="checkbox"
+                       type="checkbox" value="Jaap visser">
+                <label for="Jaap-visser">Jaap visser</label><br>
+                <input class="filter__input-checkboxes" data-filter="Michel-van-egmond"
+                       id="Michel-van-egmond" name="onderwerp-mode" title="checkbox"
+                       type="checkbox" value="Michel van Egmond">
+                <label for="Michel-van-egmond">Michel van egmond</label><br>
+                <button class="filter__filterbutton" type="button" value="Filter">Filter</button>
+            </form>
+            <button class="reset" title="resetbutton" type="button">Reset toon alle resultaten</button>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="grid-item-filter">
+        <div class="showresults" content="dit is een div" tabindex="0">
+            <p class="geen-resultaat">helaas er is geen resultaat</p>
+            <ul class=" grid-books-blocks myUL" tabindex="0">
+
+                <li class="hide-li-sign">
+                    <figure class="figure-image-title-book" data-filter="sport">
+                        <img alt="dit is boek1" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-1.png">
+                        <p class="div-container-image__" tabindex="0">
+                            <a class="figure-image-title-book__title-book-link sport"
+                               href="https://zoeken.oba.nl/detail/Het-officiele-Ajax-jaarboek/Boek/?itemid=%7Coba-catalogus%7C80851">Ajax
+                                jaarboek</a>
+
+                        </p>
+                        <button class="add-reading-list">voeg toe</button>
+                    </figure>
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="sport">
+                        <img alt="dit is boek2" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-2.png">
+                        <p class="" tabindex="0">
+                            <a class="figure-image-title-book__title-book-link"
+                               href="https://zoeken.oba.nl/detail/Frans-van-den-Nieuwenhof/PSV-100-100-jaar-Philips-Sport-Vereniging/Boek/?action=detail&nodymsearch=false&cmd=frec&page=mainpage%2ffullrecord&itemid=%7coba-catalogus%7c1101695&cs=resultlist&rctx=AbVPMU7DQBC8jbEji8Ky8gCD0oQGf4MSCYn2tD6flU3OPsfeM@ATWhBKG4t38AwewjmhSEWHNFppZ2ZXMyCCRCxECCKukRoRiOX9w$PVarCaCzTKuOImm5gzAtKYZLWFTMl$bZ8qZwwOSAYWJHvGjl0LOUlqBjRUImtlSDfsJdaQeg8Zv8Ily5JqSFnWmte2nCRU@NLqpHfFRiueic8xGg8Totf3EFb7r8AHxQ0$z22BkO2KW3Rsla1bo@3z67yzlnNDO0dl7i2x63UnwsbAb0EITvfHAcn@FJmJjzHaHyZcfL$dcgd3Z8Hnna7$CvsD">Psv
+                                jaarboek</a>
+
+                        </p>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+                        <button class="add-reading-list">voeg toe</button>
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="fashion">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-3.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.bol.com/nl/nl/p/karl-lagerfeld/9200000107459686/?Referrer=ADVNLGOO002008J-S--9200000107459686&gad_source=1&gclid=CjwKCAiAvJarBhA1EiwAGgZl0A3dgJuZNvsGfGKPSxy1u24QEC3N88bbzZhlGshYKbfpS5q3bw3CWRoCJ5wQAvD_BwE">Karl
+                            Lagerfield</a></p>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+                        <button class="add-reading-list">voeg toe</button>
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="fashion">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-4.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.amazon.nl/Little-Book-Dior-Iconic-Fashion/dp/1787393771/ref=asc_df_1787393771/?tag=nlshogostdde-21&linkCode=df0&hvadid=430597478867&hvpos=&hvnetw=g&hvrand=2704448587929846086&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9064926&hvtargid=pla-886694277540&psc=1&mcid=a2f453968da1378fb29b460bbd74d8bd">Little
+                            Book of Dior: The
+                            Story of the Iconic Fashion House</a></p>
+                        <button class="add-reading-list">voeg toe</button>
+                        <!--             <a href="#" class="info">Info </a>-->
+                        <!--   dit is met flexbox en dat moet grid worden en bij javascript is het display grid in plaats van block-->
+
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="kunst">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-5.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.rijksmuseumshop.nl/nl/breitner-meisje-in-kimono">Breitner:
+                            meisje in kimono</a>
+                        </p>
+                        <button class="add-reading-list">voeg toe</button>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="kunst">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-6.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.bol.com/nl/nl/p/dear-theo/1001004000808528/?Referrer=ADVNLGOO002008O-S--1001004000808528&gad_source=1&gclid=CjwKCAiAvJarBhA1EiwAGgZl0N_k8UlaDsYyBpXE9CFHdadh49i7nkVggPc9yRsXA7vfNA039Rwe3RoCY0wQAvD_BwE">Dear
+                            Theo</a></p>   <button class="add-reading-list">voeg toe</button>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="cultuur">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-7.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.bol.com/nl/nl/p/memoirs-of-a-geisha/1001004000772702/?Referrer=ADVNLGOO002008O-S--1001004000772702&gad_source=1&gclid=CjwKCAiAvJarBhA1EiwAGgZl0FsvqXPHuEv1vysbI5ud0NCR1QlkBPRSPfxXoTR9hvDDs_sfv1rBxhoCTd8QAvD_BwE">
+                            Memoirs Of A Geisha</a></p>   <button class="add-reading-list">voeg toe</button>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="cultuur"><!--bem toegepast-->
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-8.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link"
+                                                    href="https://www.bol.com/nl/nl/p/darkening-age/9200000086315202/?Referrer=ADVNLGOO002008O-S--9200000086315202&gad_source=1&gclid=CjwKCAiAvJarBhA1EiwAGgZl0FaAUCea1Idyd2kKIGpnXTsnKlqfykfsG8OPUZ1uc_cW1fXcbvFt0xoCoOoQAvD_BwE">
+                            The darkening age</a></p>   <button class="add-reading-list">voeg toe</button>
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="overg">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-9.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link" href="#">9</a></p>   <button class="add-reading-list">voeg toe</button>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="overg">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-10.png">
+                        <p class="" tabindex="0"><a  class="figure-image-title-book__title-book-link" href="#">10</a></p>   <button class="add-reading-list">voeg toe</button>
+                    </figure>
+
+                </li>
+                <li class="hide-li-sign">
+
+                    <figure class="figure-image-title-book" data-filter="overg">
+                        <img alt="dit is boek3" class="figure-image-title-book__books-image"
+                             src="image/backup/aangepast/book-10.png">
+                        <p class="" tabindex="0"><a class="figure-image-title-book__title-book-link" href="#">11</a></p>   <button class="add-reading-list">voeg toe</button>
+                        <!--                                                <a href="#" class="info">Info </a>-->
+
+                    </figure>
+
+                </li>
+            </ul>
+            <ul class="grid-books-blocks myUL">
+                <li class="hide-li-sign">
+                    <figure>
+                        <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px">
+                        <a class="figure-image-title-book__title-book-link" href="#">12ajax</a><button class="add-reading-list"> voeg toe</button>
+                    </figure> </li>
+                <li class="hide-li-sign">     <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px">
+                    <a class="figure-image-title-book__title-book-link" href="#">13psv</a> <button class="add-reading-list"> voeg toe</button></li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">14karl lagerfield</a> <button class="add-reading-list"> voeg toe</button></li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">15baantje</a> <button class="add-reading-list"> voeg toe</button></li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">16disney</a> <button class="add-reading-list"> voeg toe</button></li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">17harry potter</a><button class="add-reading-list"> voeg toe</button> </li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">18avatar</a><button class="add-reading-list"> voeg toe</button> </li>
+                <li class="hide-li-sign">  <img alt="dvd foto" class="" src="image/dvd.webp" height="200px" width="200px"><a class="figure-image-title-book__title-book-link" href="#">19bambi</a><button class="add-reading-list"> voeg toe</button> </li>
+            </ul>
+
+
+            <!--                <p class="content-book-under-name-book"> ajax is een voetbalclub uit amsterdam</p>-->
+            <!--                <button>voeg toe aan leeslijst</button>-->
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>
