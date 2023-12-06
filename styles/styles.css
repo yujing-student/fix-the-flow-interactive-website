@@ -406,27 +406,37 @@ body.dark .home .text {
 
 /*boetetabel*/
 /*dit is de naam boek en datum inleveren*/
+
+.paragraph-table-info{
+    margin-top: 0.4em;
+}
 th {
     /*color: #FFFFFF;*/
-    background-color: var(--sidebar-color-white);
-    border: var(--border-color-line);
-    /*font-family: AvenirMedium;*/
+    /*background-color: var(--sidebar-color-white);*/
+    background-color: #fce8e8;
+    /*border: var(--border-color-line);*/
+    font-family: AvenirMedium;
     /*border: 1px solid #dddddd; !*  hier word een randje meegegeven aan de th  *!*/
+    border: 0.15em solid;
     font-size: 1em;
     line-height: 1.5;
+    padding: 0.5em 0.5em 0.5em 0.5em;
 
 
 }
 
 /*dit zijn de celblockej*/
-td {
+td,tr {
     background-color: var(--sidebar-color-white);
-    border: var(--border-color-line);
+    /*border: var(--border-color-line);*/
     /*font-family: AvenirMedium;*/
+    border: 0.15em solid;
     font-size: 1em;
     line-height: 1.5;
-    margin: var(--margin-1em);
+    /*margin: var(--margin-1em);*/
+    padding: 0.5em 0.5em 0.5em 0.5em;
 }
+/*https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table todo hier naar kijken voor table opmaak en sorteren*/
 
 /*algemeen*/
 .showresults { /*verbergen van showresults met boeken een volledige div met daarin de 2 grid item-filters*/
@@ -530,13 +540,30 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
     /*margin-bottom: var(--margin-bottom-1em);*/
     margin-bottom: 2em;
     cursor: pointer;
+
+}
+
+.text-boete{
+    transition: all 1s ease-out;
+    translate: 100vw 0;
+    display: none;
+}
+/*als je op de button hover toon dan de tekst vanaf de linkerkant  */
+.button-boeken:hover + .text-boete{
+    transition: 1s;
+    translate:  0 0;
+
+    display: block;
 }
 
 summary:hover { /*hover over de details van meer info*/
-    background-color: green;
-    color: white;
+    background-color: #43194D;
+    color: #FFFFFFFF;
     width: 30em;
+    transform: scale(1);
+
 }
+
 
 /*dit zijn de buttons*/
 button, .filter__filterbutton { /*filterbutton staat lager in de forms*/
@@ -1006,16 +1033,4 @@ a:hover { /*hover over de linkjes*/
 }
 
 
-.text-boete{
-    transition: all 1s ease-out;
-    translate: 100vw 0;
-    display: none;
-}
-/*als je op de button hover toon dan de tekst vanaf de linkerkant  */
-.button-boeken:hover + .text-boete{
-    transition: 1s;
-    translate:  0 0;
-
-    display: block;
-}
 /*todo een aparte pagina maken voor zoeken oba heeft dat ook als je naar iets zoekt ga je naar zoeken,oba.nl/?=zoekopdracht*/
