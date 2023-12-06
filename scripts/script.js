@@ -120,7 +120,7 @@ filtershow();
 
 function searchfunction() {
     // https://www.w3schools.com/howto/howto_js_filter_lists.asp bron waar ik code gekopieerd heb
-    let input, InputUser, listbooks, searchClassNameBook, i, titleBook, ulList, button , textNoresults;
+    let input, InputUser, listbooks, searchClassNameBook, i, titleBook, ulList, button ;
     input = document.getElementById('form__input-searchfunciton');
     button = document.querySelector('.i--search');
 

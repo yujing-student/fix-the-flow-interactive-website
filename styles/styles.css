@@ -57,10 +57,10 @@
 
     /*gridtemplate*/
     --grid-template-areas-indeling:"item1 item1"
-    "item2 item3"
-    "item4 item4";
+    "item2 item4"
+    "item3 item3";
 
-    --grid-template-columns-indeling: 1fr 1fr;
+    --grid-template-columns-indeling: 20em 1fr;
 
 
 }
@@ -510,6 +510,7 @@ td {
     }
     .grid-container-filter{
         display: none; /*1 grote container met daarin 4 kinderen*/
+
         /*grid-gap: 1em;*/
         grid-template-areas:
             "zoekvak"
@@ -658,13 +659,18 @@ a:hover { /*hover over de linkjes*/
     color: var(--primary-color-red);
     cursor: pointer;
 }
-
-
+.grid-container-filter{
+    margin-top: 5em;
+}
+.grid-books-blocks{
+    margin: 0 2em 0 2em;
+}
 .figure-image-title-book { /*de boeken grote en title*/
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0 1em 0 0;
 }
 
 /*bem toegepast*/
@@ -689,7 +695,7 @@ a:hover { /*hover over de linkjes*/
     }
 
     .grid-container-filter {
-        margin-top: 5em;
+
         display: none;
         grid-template-areas:
        var(--grid-template-areas-indeling);
@@ -710,21 +716,21 @@ a:hover { /*hover over de linkjes*/
 
     .grid-item:nth-child(2) {
         grid-area: item2;
-        background-color: #d72d2d;
+        /*background-color: #d72d2d;*/
         margin-bottom: var(--margin-bottom-1em);
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(3) {
         grid-area: item4;
-        background-color: #80f6f2;
+        /*background-color: #80f6f2;*/
         margin-right: 5em;
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(4) {
         grid-area: item3;
-        background-color: #ae8aff;
+        /*background-color: #ae8aff;*/
         /*grid-template-columns: 10em;*/
     }
     .grid-container-filter{
@@ -734,14 +740,14 @@ a:hover { /*hover over de linkjes*/
     }
     .grid-item-filter:nth-child(1){
         grid-area: item1;
-        background-color: rgba(88, 255, 83, 0.57);
+        /*background-color: rgba(88, 255, 83, 0.57);*/
     }    .grid-item-filter:nth-child(2){
              grid-area: item2;
-             background-color: rgba(252, 67, 240, 0.57);
+             /*background-color: rgba(252, 67, 240, 0.57);*/
          }
     .grid-item-filter:nth-child(2){
         grid-area: item2;
-        background-color: rgb(227, 22, 22);
+        /*background-color: rgb(227, 22, 22);*/
         /*grid-template-columns: 50em;*/
         margin: 0 1em 0 0;
     }
@@ -781,21 +787,21 @@ a:hover { /*hover over de linkjes*/
 
     .grid-item:nth-child(2) {
         grid-area: item2;
-        background-color: #d72d2d;
+
         margin-bottom: var(--margin-bottom-1em);
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(3) {
         grid-area: item4;
-        background-color: #80f6f2;
+
         margin-right: 5em;
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(4) {
         grid-area: item3;
-        background-color: #ae8aff;
+
         /*grid-template-columns: 10em;*/
     }
 
@@ -814,15 +820,16 @@ a:hover { /*hover over de linkjes*/
     }
     .grid-item-filter:nth-child(1){
         grid-area: item1;
-        background-color: rgba(88, 255, 83, 0.57);
+
     }    .grid-item-filter:nth-child(2){
              grid-area: item2;
-             background-color: rgba(252, 67, 240, 0.57);
+
          }
 
     .grid-books-blocks { /*dit zijn de boeken die getoond worden*/
         display: grid;
         grid-template-areas: "boek1 boek2";
+
     }
 
     .figure-image-title-book { /*positioneren van de boeken en de tekst*/
@@ -857,21 +864,21 @@ a:hover { /*hover over de linkjes*/
 
     .grid-item:nth-child(2) {
         grid-area: item2;
-        background-color: #d72d2d;
+
         margin-bottom: var(--margin-bottom-1em);
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(3) {
         grid-area: item4;
-        background-color: #80f6f2;
+
         margin-right: 5em;
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(4) {
         grid-area: item3;
-        background-color: #ae8aff;
+
         /*grid-template-columns: 10em;*/
     }
 
@@ -896,14 +903,13 @@ a:hover { /*hover over de linkjes*/
     }
     .grid-item-filter:nth-child(1){
         grid-area: item1;
-        background-color: rgba(88, 255, 83, 0.57);
     }    .grid-item-filter:nth-child(2){
              grid-area: item2;
-             background-color: rgba(252, 67, 240, 0.57);
+
          }
     .grid-item:nth-child(2){
         grid-area: item2;
-        background-color: rgb(227, 22, 22);
+
         /*grid-template-columns: 50em;*/
         margin: 0 1em 0 0;
     }
@@ -943,32 +949,32 @@ a:hover { /*hover over de linkjes*/
         /*background-color: rgba(88, 255, 83, 0.57);*/
     }    .grid-item-filter:nth-child(2){
         grid-area: item2;
-        background-color: rgba(252, 67, 240, 0.57);
+
     }
     .grid-item:nth-child(2){
         grid-area: item2;
-        background-color: rgba(88, 255, 83, 0.57);
+
         /*grid-template-columns: 50em;*/
         margin: 0 1em 0 0;
     }
 
     .grid-item:nth-child(2) {
         grid-area: item2;
-        background-color: #d72d2d;
+
         margin-bottom: var(--margin-bottom-1em);
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(3) {
         grid-area: item4;
-        background-color: #80f6f2;
+
         margin-right: 5em;
         /*grid-template-columns: 10em;*/
     }
 
     .grid-item:nth-child(4) {
         grid-area: item3;
-        background-color: #ae8aff;
+
         /*grid-template-columns: 10em;*/
     }
 
