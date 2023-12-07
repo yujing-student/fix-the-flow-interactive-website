@@ -60,7 +60,8 @@
     "item2 item4"
     "item3 item3";
 
-    --grid-template-columns-indeling: 20em 1fr;
+    --grid-template-columns-indeling-contianer: 1fr 1fr;
+    --grid-template-columns-indeling-filters: 20em 1fr;
 
 
 }
@@ -527,12 +528,21 @@ td,tr {
             "inleiding "/*regel1*/
         "boeken-overzicht-boeken"
             "meer-info-filters";
+        padding: 1em;
     }
 
+
 }
-p:nth-child(2) { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+p:nth-of-type(2) { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
     margin-bottom: var(--margin-bottom-1em);
+
+
+
+}
+.inleiding-welkom{
+    width: 15em;
     height: 3em;
+    margin: 1em 0 4em 0em;
 }
 
 
@@ -607,7 +617,8 @@ form label {
 
 .i--search { /*icoon zoeken*/
     margin-right: 1rem;
-    font-size: 2.5em;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 /*zoek icon*/
@@ -688,7 +699,7 @@ a:hover { /*hover over de linkjes*/
 }
 .grid-container-filter{
 
-    margin-top: 5em;
+    margin-top: 1em;
 }
 .grid-books-blocks{
     margin: 0 2em 0 2em;
@@ -714,7 +725,7 @@ a:hover { /*hover over de linkjes*/
         display: grid;
         grid-template-areas:
        var(--grid-template-areas-indeling);
-        grid-template-columns:var(--grid-template-columns-indeling)
+        grid-template-columns:var(--grid-template-columns-indeling-contianer)
 
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
         /*padding: 1em;*/
@@ -731,7 +742,7 @@ a:hover { /*hover over de linkjes*/
     }
 
     .to-long-text-margin {
-        margin-bottom: 1em;
+        /*margin-bottom: 1em;*/
 
     }
 
@@ -802,7 +813,7 @@ a:hover { /*hover over de linkjes*/
     .grid-container {
         display: grid;
         grid-template-areas:   var(--grid-template-areas-indeling);
-        grid-template-columns: var(--grid-template-columns-indeling);
+        grid-template-columns: var(--grid-template-columns-indeling-contianer);
 
 
     }
@@ -878,7 +889,7 @@ a:hover { /*hover over de linkjes*/
     .grid-container {
         display: grid;
         grid-template-areas:   var(--grid-template-areas-indeling);
-        grid-template-columns: var(--grid-template-columns-indeling);
+        grid-template-columns: 35em 1fr;
         /*1specifiek item container*/
 
 
@@ -921,6 +932,7 @@ a:hover { /*hover over de linkjes*/
 
     p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. tekst */
         max-width: 35em; /*dit staat ook in de volgende maar niet in de vorige*/
+        margin:1em 0 0 0;
     }
 
     /*contianer filter de onderste cotnaienr*/
@@ -965,6 +977,7 @@ a:hover { /*hover over de linkjes*/
         display: grid;
         grid-template-areas:   var(--grid-template-areas-indeling);
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
+        /*grid-template-columns: 50em 1fr;*/
     }
 
     .grid-container-filter{
@@ -1012,6 +1025,7 @@ a:hover { /*hover over de linkjes*/
 
     p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
         max-width: 35em;
+
     }
 
 
