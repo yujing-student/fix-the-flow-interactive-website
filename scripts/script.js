@@ -24,28 +24,30 @@ modeSwitch.addEventListener("click", () => {
 
     }
 });
+function tablessort(){
+    const allTables = document.querySelectorAll("table");
 
-const allTables = document.querySelectorAll("table");
+    for (const table of allTables) {
+        const tBody = table.tBodies[0];
+        const rows = Array.from(tBody.rows);
+        const headerCells = table.tHead.rows[0].cells;
 
-for (const table of allTables) {
-    const tBody = table.tBodies[0];
-    const rows = Array.from(tBody.rows);
-    const headerCells = table.tHead.rows[0].cells;
+        for (const th of headerCells) {
+            const cellIndex = th.cellIndex;
 
-    for (const th of headerCells) {
-        const cellIndex = th.cellIndex;
+            th.addEventListener("click", () => {
+                rows.sort((tr1, tr2) => {
+                    const tr1Text = tr1.cells[cellIndex].textContent;
+                    const tr2Text = tr2.cells[cellIndex].textContent;
+                    return tr1Text.localeCompare(tr2Text);
+                });
 
-        th.addEventListener("click", () => {
-            rows.sort((tr1, tr2) => {
-                const tr1Text = tr1.cells[cellIndex].textContent;
-                const tr2Text = tr2.cells[cellIndex].textContent;
-                return tr1Text.localeCompare(tr2Text);
+                tBody.append(...rows);
             });
-
-            tBody.append(...rows);
-        });
+        }
     }
 }
+
 
 /*hierboven moet straks weer uitcommented zijn*/
 function boeken() {
@@ -182,10 +184,91 @@ function searchfunction() {
     }
 }
 
-searchfunction();
+// searchfunction();
+
+const searfucntion2 = () =>{
+    let  listbooks, ulList, button ;
+    button = document.querySelector('.i--search');
+
+    ulList =document.querySelectorAll('.myUL');
+    listbooks = document.querySelectorAll('.hide-li-sign');
+    let bookclasses = document.getElementsByClassName('.figure-image-title-book__title-book-link');
+    button.onclick=()=>{
+        let  inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();
+        ulList.forEach((ul)=>{
+            console.log(`dit is de ul list${ul}`)
+            listbooks.forEach ((li)=>{
+                console.log(`dit is de ul list${li}`)
+                let titleBook = bookclasses.textContent || bookclasses.innerText;
+                if (titleBook.toUpperCase().indexOf(InputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek*/
+                    li.style.display = "";/*word het gevonden dan word het hier getoond het boek*/
+                } else {
+                    li.style.display = "none";
+                }
+
+
+            })
+
+        })
+    }
+
+}
+searfucntion2();
+
+
+const searchfunctionarray = () =>{
+    let  listbooks , ulList, button, bookname ;
+    button = document.querySelector('.i--search');
+
+    ulList =document.querySelectorAll('.myUL');
+    listbooks = document.querySelectorAll('.hide-li-sign');
+    bookname = document.querySelectorAll('.figure-image-title-book__title-book-link');
+
+    /*omzetten nodelist naar array*/
+    let arrayUlList = Array.from(ulList);
+    let arraylistbooks = Array.from(listbooks);
+    let arraybookname = Array.from(bookname);
+    let search = [];/*lege array hier alle resultaten oplsaan*/
+    let show = '';
+
+
+    button.onclick = () => {
+        let InputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();
+
+        arrayUlList.forEach((ul) => {
+            console.log(ul);
+
+            arraylistbooks.forEach((li) => {
+                console.log(li);
+                arraybookname.forEach((book)=>{/*forlooop door de array met booknames*/
+                    let booktitle = arraybookname.textContent ||arraybookname.innerText;/*filteren resultatnen*/
+                    search.push(booktitle.toUpperCase());/*resultaten toevoegen aan search*/
+                    let FoundBooks = search.filter(title => title.includes(InputUser));/*https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/array/filter*/
+
+
+                    FoundBooks.forEach((found)=>{
+                        if(found){
+                         show.style.display='';
+                        }
+
+                        else{
+                            show.style.display='none';
+                        }
+                    });
+                });
 
 
 
+
+
+
+            });
+
+
+        });
+    }
+}
+searchfunctionarray();
 
 
 function allAddButtons (){
@@ -220,49 +303,54 @@ function allAddButtons (){
 
 allAddButtons();
 //  alles hieronder is gestrand en mislukt
-listbooks = document.querySelectorAll('.hide-li-sign')
-
-let buttonfilter = document.querySelector('.filter__filterbutton');
-let checkbox_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
-let books_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
-let books = document.querySelectorAll('.figure-image-title-book');/*hier staat ook de data-filter in*/
-let checkbox = document.querySelectorAll('.filter__input-checkboxes');/*https://www.w3schools.com/jsref/prop_checkbox_checked.asp*/
-let datafiltersport = document.querySelectorAll('[data-filter="sport"]');/*https://stackoverflow.com/questions/22699072/using-data-attribute-as-a-selector-to-filter-elements*/
-let dataid = document.querySelector('#onderwerp-sport,#onderwerp-cultuur,#onderwerp-kunst,#onderwerp-mode')
-buttonfilter.addEventListener('click', function () {
-
-    // books.forEach();
-
-    checkbox.forEach(checkBoxElement => {
 
 
-        if (checkBoxElement.checked) {
-            if (checkBoxElement.classList.contains("sport")){
-                checkBoxElement.style.display = "block";
+let filterbuttons = () =>{
+
+    listbooks = document.querySelectorAll('.hide-li-sign')
+
+    let buttonfilter = document.querySelector('.filter__filterbutton');
+    let checkbox_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
+    let books_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
+    let books = document.querySelectorAll('.figure-image-title-book');/*hier staat ook de data-filter in*/
+    let checkbox = document.querySelectorAll('.filter__input-checkboxes');/*https://www.w3schools.com/jsref/prop_checkbox_checked.asp*/
+    let datafiltersport = document.querySelectorAll('[data-filter="sport"]');/*https://stackoverflow.com/questions/22699072/using-data-attribute-as-a-selector-to-filter-elements*/
+    let dataid = document.querySelector('#onderwerp-sport,#onderwerp-cultuur,#onderwerp-kunst,#onderwerp-mode')
+    buttonfilter.addEventListener('click', function () {
+
+        // books.forEach();
+
+        checkbox.forEach(checkBoxElement => {
+
+
+            if (checkBoxElement.checked) {
+                if (checkBoxElement.classList.contains("sport")){
+                    checkBoxElement.style.display = "block";
+                }
+
+
+                //     als de checkbox gechekt is controleer of checkbox overeenkomst met een class
+                //     dus class sport gelijk aan checkbox sport met claslist.conatins
             }
+        });
 
 
-            //     als de checkbox gechekt is controleer of checkbox overeenkomst met een class
-            //     dus class sport gelijk aan checkbox sport met claslist.conatins
+        books.forEach((book) => {
+
+        });
+
+
+
+    });
+
+
+    let rest = document.querySelector('.reset');
+
+
+    rest.onclick =()  =>{
+        for (let i = 0; i < listbooks.length; i++) {
+            listbooks[i].style.display = "grid"; //laat de resultaten weer zien
         }
-    });
-
-
-    books.forEach((book) => {
-
-    });
-
-
-
-});
-
-
-let rest = document.querySelector('.reset');
-
-
-rest.onclick =()  =>{
-    for (let i = 0; i < listbooks.length; i++) {
-        listbooks[i].style.display = "grid"; //laat de resultaten weer zien
     }
 }
 // todo debuggen javascirpt code https://www.jetbrains.com/help/webstorm/debugging-javascript-in-chrome.html#debugging_js_on_built_in_server_example
