@@ -162,9 +162,10 @@
                     <!--                    <button class="search-button">zoek</button>-->
                     <i class="bx bx-search icon i--search" tabindex="0"></i>
                     <input aria-label="zoeken naar boeken" id="form__input-searchfunciton"
-                           onkeyup="searchfunction2()"
                            placeholder="typ hier uw boek in"
-                           type="search"><!--      -->
+                           type="search">
+<!--                           onkeyup="searchfunction2()"-->
+                         <!--      -->
                 </form>
             </div>
             <div class="grid-item" tabindex="0">
@@ -330,7 +331,8 @@
                     </form>
                     <button class="reset" title="resetbutton" type="button">Reset toon alle resultaten</button>
                     <h3>leeslijst</h3>
-                    <p>leeslijst boeken toegevoegd:</p>
+                    <p>klik op voegtoe als je een boek wilt toeveogen aan de leeslijst</p>
+                    <p><a href="#"> ga naar leeslijst</a></p>
                     <pre class="output"></pre>
 
 
@@ -343,6 +345,7 @@
             <div class="grid-item-filter">
                 <div class="showresults" content="dit is een div" tabindex="0">
                     <p class="geen-resultaat">helaas er is geen resultaat</p>
+                    <p>zoekresultaten:</p>
                     <ul class=" grid-books-blocks myUL" tabindex="0">
 
                         <li class="hide-li-sign">

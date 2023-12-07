@@ -161,17 +161,19 @@ const searfucntion2 = () => {
 
     button.addEventListener('click', () => {
         let  inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*zoekopdracht opslaan*/
-        listbooks.forEach (li=>{
+        listbooks.forEach (li=>{/*forloop li moet er zijn omdat je geen forloop kan doen op bookclasses of aanpassen hide li naar fuge image title book kan ook niet */
 
             let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*deze class aan bookclasss geven*/
             if (bookclasses) {/*checken of class daadwerkelijk bestaat*/
-                let titleBook = bookclasses.textContent || bookclasses.innerText;/*concent bookclasses aan titlebook meegeven en innertext is resserve*/
+                let titleBook = bookclasses.textContent || bookclasses.innerText;/*concent bookclasses aan titlebook meegeven en innertext is resserve declass figure image daar staat de titel van het boek en dat is ok de textcontetn*/
                 if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek en uppercase is hoofdletterschecken*/
                     shownorestult.style.display = 'none';/*hier moet nog naar gekenen worden*/
                     li.style.display = "";/*word het gevonden dan word het hier getoond het boek*/
+                    console.log(`boook: ${li.innerText} is gevonden met zoekopdracht: ${inputUser}`)
                 }
                 else {
                     li.style.display = "none";/*en anders word er niks getoon*/
+                    console.log(`boook: ${li.textContent} is niet gevonden met zoekopdracht: ${inputUser}`)
 
                     shownorestult.style.display = 'block';/*hier moet nog naar gekenen worden todo waarom dit niet werkt helaas er is geen resultaat*/
                 }
@@ -192,10 +194,10 @@ searfucntion2();
 
 
 function allAddButtons (){
-    let buttons = document.getElementsByClassName('add-reading-list');//19 knoppen
+    let buttons = document.querySelectorAll('.add-reading-list');//19 knoppen
     /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
-    let display = document.getElementsByClassName('count-clicks')[0];/*laten zien hoeveel keer geliktop*/
-    let namebook = document.getElementsByClassName('figure-image-title-book__title-book-link');
+    let display = document.querySelectorAll('.count-clicks')[0];/*laten zien hoeveel keer geliktop*/
+    let namebook = document.querySelectorAll('.figure-image-title-book__title-book-link');
     let arraybooks = [];
 
         for (let buttonNumber=0; buttonNumber<buttons.length; buttonNumber++) {/*loop door deze 19 buttons*/
