@@ -555,13 +555,13 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
 
 .text-boete{
     transition: all 1s ease-out;
-    translate: 100vw 0;
+    /*translate: 100vw 0;*/
     display: none;
 }
 /*als je op de button hover toon dan de tekst vanaf de linkerkant  */
 .button-boeken:hover + .text-boete{
     transition: 1s;
-    translate:  0 0;
+    /*translate:  0 0;*/
 
     display: block;
 }

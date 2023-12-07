@@ -24,91 +24,45 @@ modeSwitch.addEventListener("click", () => {
 
     }
 });
-function tablessort(){
-    const allTables = document.querySelectorAll("table");
-
-    for (const table of allTables) {
-        const tBody = table.tBodies[0];
-        const rows = Array.from(tBody.rows);
-        const headerCells = table.tHead.rows[0].cells;
-
-        for (const th of headerCells) {
-            const cellIndex = th.cellIndex;
-
-            th.addEventListener("click", () => {
-                rows.sort((tr1, tr2) => {
-                    const tr1Text = tr1.cells[cellIndex].textContent;
-                    const tr2Text = tr2.cells[cellIndex].textContent;
-                    return tr1Text.localeCompare(tr2Text);
-                });
-
-                tBody.append(...rows);
-            });
-        }
-    }
-}
 
 
-/*hierboven moet straks weer uitcommented zijn*/
+/*hierboven code amber*/
 function boeken() {
     let button = document.querySelector(".button-boeken");
     button.addEventListener('click', () => {
         window.location.href = "boete.index.html";
     });
-
-
 }
-
 boeken();
-
-function gridcontainer() {
-    let divresults = document.querySelector(".grid-container-filter");
-    let button = document.querySelector(".i--search");
-
-    button.addEventListener('click', function () {
-        let displaydivresults = window.getComputedStyle(divresults).display;
-        //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
-        //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
-        //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
-        if (displaydivresults === "none") {
-            divresults.style.display = "grid";
-        }
-    });
-
-
-
-}
-
-
-gridcontainer();
 
 function showdivresults() {/*carousel laten zien*/
 
     let divresults = document.querySelector(".showresults");
-    // seleteer de .showresylts div
+    let divresultsGrid = document.querySelector(".grid-container-filter");
     let button = document.querySelector(".i--search");
     button.addEventListener('click', function () {
         let displaydivresults = window.getComputedStyle(divresults).display;
-        //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
-        //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
-        //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
+
+        let displaydivresultsgrid = window.getComputedStyle(divresultsGrid).display;
+
         if (displaydivresults === "none") {
             divresults.style.display = "grid";
         }
+        if (displaydivresultsgrid === "none") {
+            divresultsGrid.style.display = "grid";
+        }
     });
-    // //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
-    // //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
-    // //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
+
 
 }
 
 showdivresults();
 
 
-showdivresults();
 
 
 function filtershow() {
+    /*deze filters zijn apart omdat de gebruiker moet kunnen kiezen welke die wil openen*/
     let formresults = document.querySelector(".filter__collaps-open-function-boeken");
     formresults.style.transition = "opacity 0.1s ease-out";
     let button = document.querySelector(".filter__collapsible-boeken"); // select the button
@@ -121,6 +75,7 @@ function filtershow() {
     let formresults_third = document.querySelector(".filter__collaps-open-funtion-boeken-third");
     formresults_third.style.transition = "opacity 0.1s ease-out";
     let button_third = document.querySelector(".filter__collapsible-boeken-third"); // selecteer de button
+
 
 
     button.addEventListener('click', () => {
@@ -149,12 +104,25 @@ function filtershow() {
 
 filtershow();
 
+const filterloop = () =>{
+    let formresults = document.querySelectorAll(".filter-button");
+    let button = document.querySelector('.open-filters')
+    formresults.forEach(form =>{
+        button.addEventListener('click',()=>{
+            if(form.style.display === 'none'){
+                form.style.display = 'block';
+            }
+            else {
+                form.style.display = "none";
+            }
+        })
+    })
 
-
-
+}
+filterloop();
 
 const searfucntion2 = () => {
-    let listbooks, ulList, button;
+    let listbooks, button;
     button = document.querySelector('.i--search');
     listbooks = document.querySelectorAll('.hide-li-sign');
     let shownorestult = document.querySelector('.geen-resultaat')
@@ -190,43 +158,36 @@ const searfucntion2 = () => {
 }
 searfucntion2();
 
-
-
-
-function allAddButtons (){
+const addList = () =>{
     let buttons = document.querySelectorAll('.add-reading-list');//19 knoppen
+    let buttondvd = document.querySelectorAll('.add-reading-dvd');
     /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
-    let display = document.querySelectorAll('.count-clicks')[0];/*laten zien hoeveel keer geliktop*/
     let namebook = document.querySelectorAll('.figure-image-title-book__title-book-link');
     let arraybooks = [];
 
-        for (let buttonNumber=0; buttonNumber<buttons.length; buttonNumber++) {/*loop door deze 19 buttons*/
-            buttons[buttonNumber].addEventListener('click', () => {/*iedere keer als er op een button met een specifiek nummer is geklikt*/
-                console.log(`er is geklikt op button:${buttonNumber}`);/*log dan de button met het specifieke nummer*/
-                display.innerHTML = (`aantal boeken aan leeslijst:${buttonNumber}`);/*dit werkt niet omdat button 0 blijft button 0 bij ajax jaarboek */
+    buttons.forEach( button =>{
+        button.addEventListener('click', () =>{
+            console.log(`er is geklikt op button:${button}`);
+            button.disabled=true;
+            button.style.backgroundColor = "#CECFD4";
+            button.style.pointerEvents = 'none';/*dit moet werkend*/
+            button.style.boxShadow = 'none';/*dit moet werkend*/
+            button.innerHTML = "uw boek is toegevegd aan de leeslijst lijst\n";/*dit moet werkend*/
+        })
+    })
 
-                console.log(`naam book:${namebook}`);
-
-                buttons[buttonNumber].disabled = true;
-                buttons[buttonNumber].style.backgroundColor = "#CECFD4";
-                buttons[buttonNumber].style.pointerEvents = 'none';/*dit moet werkend*/
-                buttons[buttonNumber].style.boxShadow = 'none';/*dit moet werkend*/
-                buttons[buttonNumber].innerHTML = "uw boek is toegevegd aan de leeslijst\n";/*dit moet werkend*/
-
-                arraybooks.push(buttons[buttonNumber]);/**/
-                console.log(`dit boek is toegevoegd${arraybooks}`);
-
-
-            });
-        }
-
-
+    buttondvd.forEach( button =>{
+        button.addEventListener('click', () =>{
+            console.log(`er is geklikt op button:${button}`);
+            button.disabled=true;
+            button.style.backgroundColor = "#CECFD4";
+            button.style.pointerEvents = 'none';/*dit moet werkend*/
+            button.style.boxShadow = 'none';/*dit moet werkend*/
+            button.innerHTML = "uw dvd is toegevegd aan de dvd lijst\n";/*dit moet werkend*/
+        })
+    })
 }
-
-allAddButtons();
-//  alles hieronder is gestrand en mislukt
-
-
+addList();
 let filterbuttons = () =>{
 
     listbooks = document.querySelectorAll('.hide-li-sign')

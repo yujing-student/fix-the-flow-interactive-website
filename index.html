@@ -162,7 +162,7 @@
                     <!--                    <button class="search-button">zoek</button>-->
                     <i class="bx bx-search icon i--search" tabindex="0"></i>
                     <input aria-label="zoeken naar boeken" id="form__input-searchfunciton"
-                           placeholder="typ hier uw boek in"
+                           placeholder="typ hier om te zoeken "
                            type="search">
 <!--                           onkeyup="searchfunction2()"-->
                          <!--      -->
@@ -244,7 +244,8 @@
             <div class="grid-item-filter" tabindex="0">
                 <!--                <div class="grid-filters-functions" tabindex="0">-->
                 <h3 class="margin-filter"><strong>Filters</strong></h3>
-                <p> <span class="count-clicks"></span></p>
+                <p>druk op een filter met icoontje om 1 filter te openen</p><p> wilt u alle filters zien druk op uitklappen alle filters</p>
+                <button class="open-filters">uitklappen ale filters</button>
                 <div class="item-filter filter">
 
                     <!--                    <box-icon name='filter-alt' ></box-icon>-->
@@ -254,7 +255,7 @@
                     </button><!--bem toegepast-->
 
                     <form aria-label="dit is het form met daarin de filter functies die je kan selecteren"
-                          class="filter__collaps-open-function-boeken">
+                          class="filter__collaps-open-function-boeken filter-button">
                         <input class="filter__input-checkboxes" data-filter="sport"
                                id="onderwerp-sport" name="onderwerp-sport"
                                title="sport" type="checkbox" value="sport">
@@ -275,13 +276,14 @@
                     </form>
 
                 </div>
+
                 <div class="item-filter filter">
                     <button aria-pressed="false" class="filter__collapsible-boeken-second"
                             tabindex="0"
                             type="button"><i class='bx bx-filter-alt'></i>Genre filter
                     </button>
                     <form aria-label="dit is het form met daarin de filter functies die je kan selecteren"
-                          class="filter__collaps-open-funtion-boeken-second">
+                          class="filter__collaps-open-funtion-boeken-second filter-button">
                         <input class="filter__input-checkboxes" data-filter="sport" id="onderwerp-sport_genre"
                                name="onderwerp-sport" title="checkbox" type="checkbox" value="sport">
                         <label class="lable-checkbox" for="onderwerp-sport"> Thriller</label><br>
@@ -310,7 +312,7 @@
                     <!--        https://www.w3schools.com/css/css-boxmodel.asp
                     hier naar kijken met chekboxes of als sorteerfunctie activitetien dvd boeken-->
                     <form aria-label="dit is het form met daarin de filter funcites die je kan selecteren"
-                          class="filter__collaps-open-funtion-boeken-third" title="form">
+                          class="filter__collaps-open-funtion-boeken-third filter-button" title="form">
                         <input class="filter__input-checkboxes" data-filter="Evert-meer"
                                id="Evert-meer" name="onderwerp-sport" title="checkbox"
                                type="checkbox" value="Evert meer">
@@ -329,14 +331,16 @@
                         <label for="Michel-van-egmond">Michel van egmond</label><br>
                         <button class="filter__filterbutton" type="button" value="Filter">Filter</button>
                     </form>
-                    <button class="reset" title="resetbutton" type="button">Reset toon alle resultaten</button>
+                </div>
+                <button class="reset" title="resetbutton" type="button">Reset toon alle resultaten</button>
                     <h3>leeslijst</h3>
                     <p>klik op voegtoe als je een boek wilt toeveogen aan de leeslijst</p>
                     <p><a href="#"> ga naar leeslijst</a></p>
                     <pre class="output"></pre>
 
 
-                </div>
+
+
 
 
             </div>
@@ -345,7 +349,7 @@
             <div class="grid-item-filter">
                 <div class="showresults" content="dit is een div" tabindex="0">
                     <p class="geen-resultaat">helaas er is geen resultaat</p>
-                    <p>zoekresultaten:</p>
+                    <h3>zoekresultaten:</h3>
                     <ul class=" grid-books-blocks myUL" tabindex="0">
 
                         <li class="hide-li-sign">
@@ -511,7 +515,7 @@
                             <figure class="figure-image-title-book">
                                 <img alt="dvd foto" class="" height="200px" src="image/dvd.webp" width="200px">
                                 <a class="figure-image-title-book__title-book-link" href="#">12ajax</a>
-                                <button class="add-reading-list"> voeg toe</button>
+                                <button class="add-reading-dvd"> voeg toe</button>
                             </figure>
                         </li>
                         <li class="hide-li-sign">
@@ -519,43 +523,43 @@
                             <img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px">
                             <a class="figure-image-title-book__title-book-link" href="#">13psv</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                             </figure>
                         </li>
                         <li class="hide-li-sign">    <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">14karl lagerfield</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                         <li class="hide-li-sign">          <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">15baantje</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                         <li class="hide-li-sign">          <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">16disney</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                         <li class="hide-li-sign">          <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">17harry potter</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                         <li class="hide-li-sign">          <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">18avatar</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                         <li class="hide-li-sign">    <figure class="figure-image-title-book"><img alt="dvd foto" class="" height="200px" src="image/dvd.webp"
                                                       width="200px"><a class="figure-image-title-book__title-book-link"
                                                                        href="#">19bambi</a>
-                            <button class="add-reading-list"> voeg toe</button>
+                            <button class="add-reading-dvd"> voeg toe</button>
                         </figure>
                         </li>
                     </ul>
