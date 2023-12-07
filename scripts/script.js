@@ -65,16 +65,15 @@ function gridcontainer() {
     let divresults = document.querySelector(".grid-container-filter");
     let button = document.querySelector(".i--search");
 
-    button.addEventListener('click', () => {
+    button.addEventListener('click', function () {
         let displaydivresults = window.getComputedStyle(divresults).display;
-
+        //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
+        //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
         if (displaydivresults === "none") {
             divresults.style.display = "grid";
-        } else {
-            divresults.style.display = "none";
         }
     });
-
 
 
 
@@ -158,21 +157,23 @@ const searfucntion2 = () => {
     let listbooks, ulList, button;
     button = document.querySelector('.i--search');
     listbooks = document.querySelectorAll('.hide-li-sign');
-
+    let shownorestult = document.querySelector('.geen-resultaat')
 
     button.addEventListener('click', () => {
-        let  inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();
+        let  inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*zoekopdracht opslaan*/
         listbooks.forEach (li=>{
 
-            let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');
-            if (bookclasses) {
-                let titleBook = bookclasses.textContent || bookclasses.innerText;
-                if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek*/
+            let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*deze class aan bookclasss geven*/
+            if (bookclasses) {/*checken of class daadwerkelijk bestaat*/
+                let titleBook = bookclasses.textContent || bookclasses.innerText;/*concent bookclasses aan titlebook meegeven en innertext is resserve*/
+                if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek en uppercase is hoofdletterschecken*/
+                    shownorestult.style.display = 'none';/*hier moet nog naar gekenen worden*/
                     li.style.display = "";/*word het gevonden dan word het hier getoond het boek*/
                 }
                 else {
-                    li.style.display = "none";
-                    li.style.innerHTML="helaas uw boek is niet gevonden"
+                    li.style.display = "none";/*en anders word er niks getoon*/
+
+                    shownorestult.style.display = 'block';/*hier moet nog naar gekenen worden todo waarom dit niet werkt helaas er is geen resultaat*/
                 }
             }
         })
