@@ -83,21 +83,27 @@ function gridcontainer() {
 
 gridcontainer();
 
-function showdivresults() {/*dit staat vermoedelijk dubbel */
-    let divresults = document.querySelectorAll(".showresults");
-    let button = document.querySelector(".i--search");
-    button.addEventListener('click', () => {
-        let displaydivresults = window.getComputedStyle(divresults).display;
+function showdivresults() {/*carousel laten zien*/
 
+    let divresults = document.querySelector(".showresults");
+    // seleteer de .showresylts div
+    let button = document.querySelector(".i--search");
+    button.addEventListener('click', function () {
+        let displaydivresults = window.getComputedStyle(divresults).display;
+        //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+        //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
+        //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
         if (displaydivresults === "none") {
             divresults.style.display = "grid";
-        } else {
-            divresults.style.display = "none";
         }
     });
-
+    // //     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+    // //     https://www.w3schools.com/jsref/jsrefgetcomputedstyle.asp
+    // //met deze code wordt alle css proporties of een element en de inhoud ervan weergegeven
 
 }
+
+showdivresults();
 
 
 showdivresults();
@@ -208,7 +214,7 @@ function allAddButtons (){
                 console.log(`dit boek is toegevoegd${arraybooks}`);
 
 
-            })
+            });
         }
 
 
