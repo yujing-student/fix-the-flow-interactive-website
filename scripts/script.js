@@ -30,9 +30,10 @@ modeSwitch.addEventListener("click", () => {
 function boeken() {
     let button = document.querySelector(".button-boeken");
     button.addEventListener('click', () => {
-        window.location.href = "boete.index.html";
+        window.location.href = "boete.index.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
     });
 }
+
 boeken();
 
 function showdivresults() {/*carousel laten zien*/
@@ -41,9 +42,9 @@ function showdivresults() {/*carousel laten zien*/
     let divresultsGrid = document.querySelector(".grid-container-filter");
     let button = document.querySelector(".i--search");
     button.addEventListener('click', function () {
-        let displaydivresults = window.getComputedStyle(divresults).display;
+        let displaydivresults = window.getComputedStyle(divresults).display;/*https://developer.mozilla.org/en-US/docs/web/api/window*/
 
-        let displaydivresultsgrid = window.getComputedStyle(divresultsGrid).display;
+        let displaydivresultsgrid = window.getComputedStyle(divresultsGrid).display;/*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
 
         if (displaydivresults === "none") {
             divresults.style.display = "grid";
@@ -57,8 +58,6 @@ function showdivresults() {/*carousel laten zien*/
 }
 
 showdivresults();
-
-
 
 
 function filtershow() {
@@ -75,7 +74,6 @@ function filtershow() {
     let formresults_third = document.querySelector(".filter__collaps-open-funtion-boeken-third");
     formresults_third.style.transition = "opacity 0.1s ease-out";
     let button_third = document.querySelector(".filter__collapsible-boeken-third"); // selecteer de button
-
 
 
     button.addEventListener('click', () => {
@@ -104,15 +102,14 @@ function filtershow() {
 
 filtershow();
 
-const filterloop = () =>{
+const filterloop = () => {/*openen van alle filters in 1 keer*/
     let formresults = document.querySelectorAll(".filter-button");
     let button = document.querySelector('.open-filters')
-    formresults.forEach(form =>{
-        button.addEventListener('click',()=>{
-            if(form.style.display === 'none'){
+    formresults.forEach(form => {
+        button.addEventListener('click', () => {
+            if (form.style.display === 'none') {
                 form.style.display = 'block';
-            }
-            else {
+            } else {
                 form.style.display = "none";
             }
         })
@@ -122,23 +119,34 @@ const filterloop = () =>{
 filterloop();
 
 const searfucntion2 = () => {
-    let listbooks, button;
-    button = document.querySelector('.i--search');
-    listbooks = document.querySelectorAll('.hide-li-sign');
-    let shownorestult = document.querySelector('.geen-resultaat')
+    let button = document.querySelector('.i--search');
+    let listbooks = document.querySelectorAll('.hide-li-sign');
+    let shownorestult = document.querySelector('.geen-resultaat');
 
     button.addEventListener('click', () => {
-        let  inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*zoekopdracht opslaan*/
-        listbooks.forEach (li=>{/*forloop li moet er zijn omdat je geen forloop kan doen op bookclasses of aanpassen hide li naar fuge image title book kan ook niet */
+        let inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*zoekopdracht opslaan*/
+        listbooks.forEach(li => {/*forloop li moet er zijn omdat je geen forloop kan doen op bookclasses of aanpassen hide li naar fuge image title book kan ook niet */
 
-            let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*deze class aan bookclasss geven*/
-            if (bookclasses) {/*checken of class daadwerkelijk bestaat*/
-                let titleBook = bookclasses.textContent || bookclasses.innerText;/*concent bookclasses aan titlebook meegeven en innertext is resserve declass figure image daar staat de titel van het boek en dat is ok de textcontetn*/
+            let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*variable bookclasses met daarin de li itemens met de class figure image title book*/
+            if (bookclasses) {/*checken of variabe daadwerkelijk bestaat*/
+
+
+                let titleBook = bookclasses.textContent || bookclasses.innerText;/*content bookclasses aan variable titlebook meegeven en innertext is resserve
+                de class figure image daar staat de titel van het boek en dat is ook de textcontetn*/
+                // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/touppercase
+
+
+
+
                 if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek en uppercase is hoofdletterschecken*/
+                    // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/indexof
                     shownorestult.style.display = 'none';/*hier moet nog naar gekenen worden*/
                     li.style.display = "";/*word het gevonden dan word het hier getoond het boek*/
                     console.log(`boook: ${li.innerText} is gevonden met zoekopdracht: ${inputUser}`)
                 }
+
+
+
                 else {
                     li.style.display = "none";/*en anders word er niks getoon*/
                     console.log(`boook: ${li.textContent} is niet gevonden met zoekopdracht: ${inputUser}`)
@@ -158,29 +166,29 @@ const searfucntion2 = () => {
 }
 searfucntion2();
 
-const addList = () =>{
+const addList = () => {
     let buttons = document.querySelectorAll('.add-reading-list');//19 knoppen
     let buttondvd = document.querySelectorAll('.add-reading-dvd');
     /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
     let namebook = document.querySelectorAll('.figure-image-title-book__title-book-link');
     let arraybooks = [];
 
-    buttons.forEach( button =>{
-        button.addEventListener('click', () =>{
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
             console.log(`er is geklikt op button:${button}`);
-            button.disabled=true;
+            button.disabled = true;
             button.style.backgroundColor = "#CECFD4";
-            button.style.remove();/*todo uitozkenen remove button*/
+            // button.style.remove();/*todo uitozkenen remove button*/
             button.style.pointerEvents = 'none';/*dit moet werkend*/
             button.style.boxShadow = 'none';/*dit moet werkend*/
             button.innerHTML = "uw boek is toegevegd aan de leeslijst lijst\n";/*dit moet werkend*/
         })
     })
 
-    buttondvd.forEach( button =>{
-        button.addEventListener('click', () =>{
+    buttondvd.forEach(button => {
+        button.addEventListener('click', () => {
             console.log(`er is geklikt op button:${button}`);
-            button.disabled=true;
+            button.disabled = true;
             button.style.backgroundColor = "#CECFD4";
             button.style.pointerEvents = 'none';/*dit moet werkend*/
             button.style.boxShadow = 'none';/*dit moet werkend*/
@@ -189,9 +197,9 @@ const addList = () =>{
     })
 }
 addList();
-let filterbuttons = () =>{
+let filterbuttons = () => {
 
-    listbooks = document.querySelectorAll('.hide-li-sign')
+    let listbooks = document.querySelectorAll('.hide-li-sign')
 
     let buttonfilter = document.querySelector('.filter__filterbutton');
     let checkbox_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
@@ -208,7 +216,7 @@ let filterbuttons = () =>{
 
 
             if (checkBoxElement.checked) {
-                if (checkBoxElement.classList.contains("sport")){
+                if (checkBoxElement.classList.contains("sport")) {
                     checkBoxElement.style.display = "block";
                 }
 
@@ -224,14 +232,13 @@ let filterbuttons = () =>{
         });
 
 
-
     });
 
 
     let rest = document.querySelector('.reset');
 
 
-    rest.onclick =()  =>{
+    rest.onclick = () => {
         for (let i = 0; i < listbooks.length; i++) {
             listbooks[i].style.display = "grid"; //laat de resultaten weer zien
         }
@@ -322,9 +329,6 @@ let filterbuttons = () =>{
 // // voegtoe();
 //
 // //     https://alvarotrigo.com/blog/disable-button-javascript/
-
-
-
 
 
 // w3schools version
