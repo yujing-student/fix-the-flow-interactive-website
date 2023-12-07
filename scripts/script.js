@@ -170,6 +170,7 @@ const addList = () =>{
             console.log(`er is geklikt op button:${button}`);
             button.disabled=true;
             button.style.backgroundColor = "#CECFD4";
+            button.style.remove();/*todo uitozkenen remove button*/
             button.style.pointerEvents = 'none';/*dit moet werkend*/
             button.style.boxShadow = 'none';/*dit moet werkend*/
             button.innerHTML = "uw boek is toegevegd aan de leeslijst lijst\n";/*dit moet werkend*/
