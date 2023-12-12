@@ -665,7 +665,8 @@ form label {
 
 
 /*forms met daarin bem toegepast*/
-.filter__collaps-open-function-boeken, .filter__collaps-open-funtion-boeken-second, .filter__collaps-open-funtion-boeken-third { /*dit zijn de buttons in de lijst en op deze pagina voor meer info*/
+.filter__collaps-open-function-boeken, .filter__collaps-open-funtion-boeken-second,
+.filter__collaps-open-funtion-boeken-third,.filter-form { /*dit zijn de buttons in de lijst en op deze pagina voor meer info*/
     display: none;
 }
 
@@ -699,6 +700,12 @@ a:nth-child(1) {
 a:hover { /*hover over de linkjes*/
     color: var(--primary-color-red);
     cursor: pointer;
+}
+.afterclick{
+    background-color: #cccccc;
+    color: #cccccc;
+    box-shadow: none;
+    pointer-events: none;
 }
 
 .grid-container-filter {

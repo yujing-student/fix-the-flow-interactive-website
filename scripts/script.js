@@ -36,87 +36,46 @@ function books() {
 
 books();
 
-function showdivresults() {/*carousel laten zien*/
+function showdivresults(results,grid,buttonpress) {/*carousel laten zien*/
 
-    let divresults = document.querySelector(".showresults");
-    let divresultsGrid = document.querySelector(".grid-container-filter");
-    let button = document.querySelector(".i--search");
+    let divresults = document.querySelector(results);
+    let divresultsGrid = document.querySelector(grid);
+    let button = document.querySelector(buttonpress);
     button.addEventListener('click', function () {
-        let displaydivresults = window.getComputedStyle(divresults).display;/*https://developer.mozilla.org/en-US/docs/web/api/window*/
-
-        let displaydivresultsgrid = window.getComputedStyle(divresultsGrid).display;/*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
-
+        let displaydivresults = window.getComputedStyle(divresults,divresultsGrid).display;/*https://developer.mozilla.org/en-US/docs/web/api/window*/
+        /*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
         if (displaydivresults === "none") {
             divresults.style.display = "grid";
-        }
-        if (displaydivresultsgrid === "none") {
-            divresultsGrid.style.display = "grid";
-        }
-    });
-
-
-}
-
-showdivresults();
-
-
-function filtershow() {
-    /*deze filters zijn apart omdat de gebruiker moet kunnen kiezen welke die wil openen*/
-    let formresults = document.querySelector(".filter__collaps-open-function-books");
-    formresults.style.transition = "opacity 0.1s ease-out";
-
-
-    let button = document.querySelector(".filter__collapsible-books"); // select the button
-    button.addEventListener('click', (button2) => {
-        if (formresults.style.display === "none") {
-            formresults.style.display = "block"; // show the form
-        } else {
-            formresults.style.display = "none"; // hide the form
-        }
-    });
-
-    let formresults_seconds = document.querySelector(".filter__collaps-open-funtion-boeken-second");
-    formresults_seconds.style.transition = "opacity 0.1s ease-out";
-    let button_seconds = document.querySelector(".filter__collapsible-boeken-second"); // selecteer de button
-    button_seconds.addEventListener('click', () => {
-        if (formresults_seconds.style.display === "none") {
-            formresults_seconds.style.display = "block"; // show the form
-        } else {
-            formresults_seconds.style.display = "none"; // hide the form
-        }
-    });
-
-    let formresults_third = document.querySelector(".filter__collaps-open-funtion-books-third");
-    formresults_third.style.transition = "opacity 0.1s ease-out";
-    let button_third = document.querySelector(".filter__collapsible-books-third"); // selecteer de button
-
-    button_third.addEventListener('click', () => {
-        if (formresults_third.style.display === "none") {
-            formresults_third.style.display = "block"; // show the form
-        } else {
-            formresults_third.style.display = "none"; // hide the form
+            divresultsGrid.style.display='grid'
         }
     });
 
 }
-const  showfitler = button =>{
+
+showdivresults('.showresults','.grid-container-filter','.i--search');
+showdivresults('.showresults','.grid-container-filter','.i--search');
 
 
-    const show = buttonselecot =>{
 
-        let mutliplebutton = document.querySelector(selectedbuttonbuttonselecot)
-       button2.addEventListener('click',element =>{
-           if(element.style.display==='none'){
-               element.style.display = "block";
-           }
-           else {
-               element.style.display = "none"; // hide the form
-           }
-
-       })
-    }
+function showforms(buttonSelect, formSelect) {/*paramters meegeven vanwege duplicate code */
+    // selecteer elementen
+    let form = document.querySelector(formSelect);/*form is de naam met darin 3 verschillende forms */
+    let button = document.querySelector(buttonSelect);
+    form.style.transition = "opacity 0.1s ease-out";/*transitie toevoegen*/
+    button.addEventListener('click', () => {/*bij het klikken van 1 van de buttons*/
+        if (form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";/*https://www.w3schools.com/js/js_function_parameters.asp*//*https://www.w3schools.com/js/js_function_definition.asp*/
+        }
+    });
 }
-filtershow();
+showforms(".filter__collapsible-books", ".filter__collaps-open-function-books");
+showforms(".filter__collapsible-books-second", ".filter__collaps-open-funtion-books-second");
+showforms(".filter__collapsible-books-third", ".filter__collaps-open-funtion-books-third");
+
+
+// filtershow();
 
 const filterloop = () => {/*openen van alle filters in 1 keer*/
     let formresults = document.querySelectorAll(".filter-button");
@@ -152,14 +111,14 @@ const searfucntion2 = () => {
                     // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/indexof
                     shownorestult.style.display = 'none';/*hier moet nog naar gekenen worden*/
                     li.style.display = "";/*word het gevonden dan word het hier getoond het boek*/
-                    console.log(`boook: ${li.innerText} is gevonden met zoekopdracht: ${inputUser}`)
+                    // console.log(`boook: ${li.innerText} is gevonden met zoekopdracht: ${inputUser}`)
                 }
 
 
 
                 else {
                     li.style.display = "none";/*en anders word er niks getoon*/
-                    console.log(`boook: ${li.textContent} is niet gevonden met zoekopdracht: ${inputUser}`)
+                    // console.log(`boook: ${li.textContent} is niet gevonden met zoekopdracht: ${inputUser}`)
 
                     shownorestult.style.display = 'block';/*hier moet nog naar gekenen worden todo waarom dit niet werkt helaas er is geen resultaat*/
                 }
@@ -176,37 +135,24 @@ const searfucntion2 = () => {
 }
 searfucntion2();
 
-const addList = () => {
-    let buttons = document.querySelectorAll('.add-reading-list');//19 knoppen
-    let buttondvd = document.querySelectorAll('.add-reading-dvd');
-    /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
-    let namebook = document.querySelectorAll('.figure-image-title-book__title-book-link');
-    let arraybooks = [];
+
+
+const addList = (button, message) => {
+    let buttons = document.querySelectorAll(button); // Select all buttons
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            console.log(`er is geklikt op button:${button}`);
+            console.log(`Button clicked: ${button}`);
             button.disabled = true;
-            button.style.backgroundColor = "#CECFD4";
-            // button.style.remove();/*todo uitozkenen remove button*/
-            button.style.pointerEvents = 'none';/*dit moet werkend*/
-            button.style.boxShadow = 'none';/*dit moet werkend*/
-            button.innerHTML = "uw boek is toegevegd aan de leeslijst lijst\n";/*dit moet werkend*/
-        })
-    })
-
-    buttondvd.forEach(button => {
-        button.addEventListener('click', () => {
-            console.log(`er is geklikt op button:${button}`);
-            button.disabled = true;
-            button.style.backgroundColor = "#CECFD4";
-            button.style.pointerEvents = 'none';/*dit moet werkend*/
-            button.style.boxShadow = 'none';/*dit moet werkend*/
-            button.innerHTML = "uw dvd is toegevegd aan de dvd lijst\n";/*dit moet werkend*/
+            button.innerHTML = message;
+            button.classList.add('afterclick');
         })
     })
 }
-addList();
+
+addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n");
+addList('.add-reading-dvd', "uw dvd is toegevegd aan de dvd lijst\n");
+
 let filterbuttons = () => {
 
     let listbooks = document.querySelectorAll('.hide-li-sign')
@@ -237,6 +183,7 @@ let filterbuttons = () => {
         });
 
 
+
         books.forEach((book) => {
 
         });
@@ -246,7 +193,6 @@ let filterbuttons = () => {
 
 
     let rest = document.querySelector('.reset');
-
 
     rest.onclick = () => {
         for (let i = 0; i < listbooks.length; i++) {

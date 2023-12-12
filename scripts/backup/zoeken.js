@@ -291,3 +291,77 @@ allAddButtons();
 // }
 //
 // // searchfunction();
+
+
+function filtershow() {
+    /*deze filters zijn apart omdat de gebruiker moet kunnen kiezen welke die wil openen*/
+    let formresults = document.querySelector(".filter__collaps-open-function-books");
+    formresults.style.transition = "opacity 0.1s ease-out";
+
+
+    let button = document.querySelector(".filter__collapsible-books"); // select the button
+    button.addEventListener('click', (button2) => {
+        if (formresults.style.display === "none") {
+            formresults.style.display = "block"; // show the form
+        } else {
+            formresults.style.display = "none"; // hide the form
+        }
+    });
+
+    let formresults_seconds = document.querySelector(".filter__collaps-open-funtion-boeken-second");
+    formresults_seconds.style.transition = "opacity 0.1s ease-out";
+    let button_seconds = document.querySelector(".filter__collapsible-boeken-second"); // selecteer de button
+    button_seconds.addEventListener('click', () => {
+        if (formresults_seconds.style.display === "none") {
+            formresults_seconds.style.display = "block"; // show the form
+        } else {
+            formresults_seconds.style.display = "none"; // hide the form
+        }
+    });
+
+    let formresults_third = document.querySelector(".filter__collaps-open-funtion-books-third");
+    formresults_third.style.transition = "opacity 0.1s ease-out";
+    let button_third = document.querySelector(".filter__collapsible-books-third"); // selecteer de button
+
+    button_third.addEventListener('click', () => {
+        if (formresults_third.style.display === "none") {
+            formresults_third.style.display = "block"; // show the form
+        } else {
+            formresults_third.style.display = "none"; // hide the form
+        }
+    });
+
+}
+
+const addList = (button,text) => {
+    let buttons = document.querySelectorAll(button);//19 knoppen
+    // let buttondvd = document.querySelectorAll(button);
+    /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
+    let namebook = document.querySelectorAll('.figure-image-title-book__title-book-link');
+    let arraybooks = [];
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log(`er is geklikt op button:${button}`);
+            button.disabled = true;
+            button.style.backgroundColor = "#CECFD4";
+            // button.style.remove();/*todo uitozkenen remove button*/
+            button.style.pointerEvents = 'none';/*dit moet werkend*/
+            button.style.boxShadow = 'none';/*dit moet werkend*/
+            button.innerHTML =text;/*dit moet werkend*/
+        })
+    })
+
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         console.log(`er is geklikt op button:${button}`);
+    //         button.disabled = true;
+    //         // button.style.backgroundColor = "#CECFD4";
+    //         // button.style.pointerEvents = 'none';/*dit moet werkend*/
+    //         // button.style.boxShadow = 'none';/*dit moet werkend*/
+    //         button.innerHTML = "uw dvd is toegevegd aan de dvd lijst\n";/*dit moet werkend*/
+    //     })
+    // })
+}
+addList('.add-reading-list','uw boekd is toegevoegd aan de dvd lijst');
+addList('.add-reading-dvd','uw dvd is toegevoegd aan de dvd lijst');
