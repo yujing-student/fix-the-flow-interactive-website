@@ -159,3 +159,135 @@ function allAddButtons (){
 }
 
 allAddButtons();
+
+
+// je debug de html en zet daarvoor de breakpoints in de js file
+
+
+// oude functie te lang en onnodig
+//function  voegtoe (){/*dit is de lange versie */
+//     // toeveogen boeken aan lijst
+//     let booksNumber = 0
+//     let button1 = document.getElementsByClassName('add-reading-list')[0];//1 knop met voeg toe
+//     let button2 = document.getElementsByClassName('add-reading-list')[1];//1 knop met voeg toe
+//     let button3 = document.getElementsByClassName('add-reading-list')[2];//1 knop met voeg toe
+//     /*https://www.geeksforgeeks.org/how-to-count-the-number-of-times-a-button-is-clicked-using-javascript/*/
+//     let display = document.getElementsByClassName('count-clicks')[0];/*dit werkt niet omdat je de 1ste selecteert en de rest niet*/
+//
+//     let arraybooks = []
+//
+//
+//     button1.onclick =() =>{/*klik op boek voeg toe*/
+//         // buttonReadinglist.disable();  /*als er op de knop is geklickt kan je niet nog een keer clickken*/
+//         console.log('button 1 aangeklikt');
+//
+//         booksNumber++
+//         display.innerHTML = booksNumber;
+//
+//         arraybooks.push(button1);
+//         button1.disabled = true;
+//         button1.style.backgroundColor="#CECFD4";
+//         document.querySelector(".text-add-buttn").innerHTML = "uw boek is toegevegd";/*dit moet werkend*/
+//         button1.style.pointerEvents='none';/*dit moet werkend*/
+//         button1.style.boxShadow='none';/*dit moet werkend*/
+//         // document.querySelector(".text-add-buttn").classList.remove(button:hover)/*dit moet werkend*/
+//
+//         /*https://www.javatpoint.com/oprweb/test.jsp?filename=javascript-dblclick-event1*/
+//
+//         const button = document.querySelector('.add-reading-list');
+//
+//         // const disableButton = () => {
+//         //     console.log("er is geklikt");
+//         //
+//         //     //     nog toevoegen dat je niet meer kan hoveren op het element
+//         //
+//         // };
+//         // button.addEventListener('click', disableButton);
+//
+//
+//
+//     }
+//     button2.onclick =() =>{/*klik op boek voeg toe*/
+//         console.log('button 2 aaangekopt');
+//         // buttonReadinglist.disable();  /*als er op de knop is geklickt kan je niet nog een keer clickken*/
+//         booksNumber++
+//         display.innerHTML = booksNumber;
+//         button2.disabled = true;
+//         button2.style.backgroundColor="#CECFD4";
+//         button2.style.pointerEvents='none';/*dit moet werkend*/
+//         button2.style.boxShadow='none';/*dit moet werkend*/
+//         document.getElementsByClassName('text-add-buttn')[1].innerHTML = "uw boek is toegevegd";/*dit moet werkend*/
+//
+//         /*https://www.javatpoint.com/oprweb/test.jsp?filename=javascript-dblclick-event1*/
+//
+//
+//
+//     }
+//     button3.onclick =() =>{/*klik op boek voeg toe*/
+//         console.log('button3 aangeklikt');
+//         // buttonReadinglist.disable();  /*als er op de knop is geklickt kan je niet nog een keer clickken*/
+//         booksNumber++
+//         display.innerHTML = booksNumber;
+//         button3.disabled = true;
+//         button3.style.backgroundColor="#CECFD4";
+//         button3.style.pointerEvents='none';/*dit moet werkend*/
+//         button3.style.boxShadow='none';/*dit moet werkend*/
+//         document.getElementsByClassName('text-add-buttn')[2].innerHTML = "uw boek is toegevegd";/*dit moet werkend*/
+//         button3.style.pointerEvents='none';
+//         /*https://www.javatpoint.com/oprweb/test.jsp?filename=javascript-dblclick-event1*/
+//
+//
+//
+//     }
+//
+//     document.querySelector(".output").innerHTML = JSON.stringify(arraybooks);/*dit werkt niet*/
+// }
+// // voegtoe();
+//
+// //     https://alvarotrigo.com/blog/disable-button-javascript/
+
+
+// w3schools version
+//function searchfunction() {
+//     // https://www.w3schools.com/howto/howto_js_filter_lists.asp bron waar ik code gekopieerd heb
+//     let input, InputUser, listbooks, searchClassNameBook, i, titleBook, ulList, button ;
+//     input = document.getElementById('form__input-searchfunciton');
+//     button = document.querySelector('.i--search');
+//
+//     ulList =document.querySelectorAll('.myUL')
+//     listbooks = document.querySelectorAll('.hide-li-sign')
+//
+//     // forloop waar i het boeknummer is en alle boeken nagelopen worden
+//     button.onclick = () =>{
+//         InputUser = input.value.toUpperCase();//controleren hoofdletters en hier word gekeken naar de zoekopdracht
+//         for (i = 0; i < ulList.length; i++) {/*dit is nodig omdat je met 2 lijsten werkt en de loop anders op 1 li werkt*/
+//             for (let list = 0; list < listbooks.length; list++) {/*hier word door de list gelopen met daarin de elementen*/
+//
+//                 searchClassNameBook = listbooks[list].getElementsByClassName("figure-image-title-book__title-book-link")[0];/*dit moet 19 boeken zijn en alle classes zijn gekoppeld aan de li*/
+//                 titleBook = searchClassNameBook.textContent || searchClassNameBook.innerText;/*hier komen alle 19 boeken langs*/
+//                 if (titleBook.toUpperCase().indexOf(InputUser) > -1) {/*hier word gecontroleerd of de zoekopdracht overeenkomt met de titel van het booek*/
+//                     listbooks[list].style.display = "";/*word het gevonden dan word het hier getoond het boek*/
+//                 } else {
+//                     listbooks[list].style.display = "none";
+//                 }
+//             }
+//         }
+//         // if(notfound){
+//         //     document.querySelector('.geen-resultaat').style.display='block';
+//         // }
+//         // else {
+//         //     document.querySelector('.geen-resultaat').style.display='none';
+//         // }
+//         // let notfound = true;
+//
+//     }
+//     let rest = document.querySelector('.reset');
+//
+//     rest.onclick =()  =>{
+//         for (let i = 0; i < listbooks.length; i++) {
+//             listbooks[i].style.display = "block"; //laat de resultaten weer zien
+//         }
+//     }
+// }
+//
+// // searchfunction();

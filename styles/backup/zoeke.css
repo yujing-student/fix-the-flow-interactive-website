@@ -1,19 +1,19 @@
 /* Fonts being used by the oba */
 @font-face {
     font-family: AvenirRoman;
-    src: url(../font/Avenir-Roman.ttf);
+    src: url(../../font/Avenir-roman.ttf);
     /*value: auto;*/
     /*initial:auto;*/
 }
 
 @font-face {
     font-family: AvenirMedium;
-    src: url(../font/Avenir-medium.ttf);
+    src: url(../../font/Avenir-medium.ttf);
 }
 
 @font-face {
     font-family: AvenirBlack;
-    src: url(../font/Avenir-Black.ttf);
+    src: url(../../font/Avenir-black.ttf);
 }
 
 
@@ -638,7 +638,7 @@ form label {
 
 /*einde forms*/
 
-.geen-resultaat{
+.no-result{
     display: none;
 }
 /*verbergen li vanege books*/
@@ -809,7 +809,7 @@ a:hover { /*hover over de linkjes*/
         margin: 0 1em 0 0;
     }
 
-    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+    p:nth-child(3), .introduction-text-book-overview { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
         max-width: 30em;
     }
 
@@ -891,7 +891,7 @@ a:hover { /*hover over de linkjes*/
         margin: 0 1em 0 0;
     }
 
-    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. tekst */
+    p:nth-child(3), .introduction-text-book-overview { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. tekst */
         max-width: 35em; /*dit staat ook in de volgende maar niet in de vorige*/
     }
 
@@ -982,7 +982,7 @@ a:hover { /*hover over de linkjes*/
         margin: 0 1em 0 0;
     }
 
-    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
+    p:nth-child(3), .introduction-text-book-overview { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
         max-width: 35em;
     }
 
