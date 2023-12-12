@@ -703,7 +703,7 @@ a:hover { /*hover over de linkjes*/
 }
 .afterclick{
     background-color: #cccccc;
-    color: #cccccc;
+    /*color: #cccccc;*/
     box-shadow: none;
     pointer-events: none;
 }

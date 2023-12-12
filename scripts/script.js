@@ -153,41 +153,22 @@ const addList = (button, message) => {
 addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n");
 addList('.add-reading-dvd', "uw dvd is toegevegd aan de dvd lijst\n");
 
-let filterbuttons = () => {
-
-    let listbooks = document.querySelectorAll('.hide-li-sign')
-
-    let buttonfilter = document.querySelector('.filter__filterbutton');
-    let checkbox_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
-    let books_array = [];/*https://www.w3schools.com/jsref/jsref_push.asp*/
-    let books = document.querySelectorAll('.figure-image-title-book');/*hier staat ook de data-filter in*/
-    let checkbox = document.querySelectorAll('.filter__input-checkboxes');/*https://www.w3schools.com/jsref/prop_checkbox_checked.asp*/
-    let datafiltersport = document.querySelectorAll('[data-filter="sport"]');/*https://stackoverflow.com/questions/22699072/using-data-attribute-as-a-selector-to-filter-elements*/
-    let dataid = document.querySelector('#onderwerp-sport,#onderwerp-cultuur,#onderwerp-kunst,#onderwerp-mode')
-    buttonfilter.addEventListener('click', () => {
-
-        // books.forEach();
-
-        checkbox.forEach(checkBoxElement => {
-
-
-            if (checkBoxElement.checked) {
-                if (checkBoxElement.classList.contains("sport")) {
-                    checkBoxElement.style.display = "block";
-                }
-
-
-                //     als de checkbox gechekt is controleer of checkbox overeenkomst met een class
-                //     dus class sport gelijk aan checkbox sport met claslist.conatins
+let filterbuttons = (button,checkbox,showresults) => {
+    let buttontest = document.querySelector(button);
+    let checkboxtest = document.querySelector(checkbox.checked);
+    let showresulttest = document.querySelector(showresults);/*hier moet een match met de gevonden boeken komen*/
+    // 2x sport dus als checbox sport is aangevinkt en overeenkomt met  de 2boeken laat resultaat zien
+    // kijken naar searchfunction
+    // var x = document.getElementById("myCheck").checked;
+    buttontest.addEventListener('click', () => {
+        books.forEach((book) => {
+            if(checkboxtest === true&& checkboxtest === book){
+                showresulttest.style.display='grid';
+            }
+            else {
+                showresulttest.innerHTML='geen resultaat';
             }
         });
-
-
-
-        books.forEach((book) => {
-
-        });
-
 
     });
 
@@ -201,3 +182,4 @@ let filterbuttons = () => {
     }
 }
 // todo debuggen javascirpt code https://www.jetbrains.com/help/webstorm/debugging-javascript-in-chrome.html#debugging_js_on_built_in_server_example
+filterbuttons('.filter__filterbutton','.filter__input-checkboxes','.showresults');
