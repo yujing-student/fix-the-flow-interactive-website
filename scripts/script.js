@@ -53,7 +53,7 @@ function showdivresults(results,grid,buttonpress) {/*carousel laten zien*/
 }
 
 showdivresults('.showresults','.grid-container-filter','.i--search');
-showdivresults('.showresults','.grid-container-filter','.i--search');
+// showdivresults('.showresults','.grid-container-filter','.i--search');
 
 
 
@@ -173,13 +173,13 @@ let filterbuttons = (button,checkbox,showresults) => {
     });
 
 
-    let rest = document.querySelector('.reset');
-
-    rest.onclick = () => {
-        for (let i = 0; i < listbooks.length; i++) {
-            listbooks[i].style.display = "grid"; //laat de resultaten weer zien
-        }
-    }
+    // let rest = document.querySelector('.reset');
+    //
+    // rest.onclick = () => {
+    //     for (let i = 0; i < li.length; i++) {
+    //         li[i].style.display = "grid"; //laat de resultaten weer zien
+    //     }
+    // }
 }
 // todo debuggen javascirpt code https://www.jetbrains.com/help/webstorm/debugging-javascript-in-chrome.html#debugging_js_on_built_in_server_example
 filterbuttons('.filter__filterbutton','.filter__input-checkboxes','.showresults');
