@@ -152,37 +152,3 @@ const addList = (button, message) => {
 
 addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n");
 addList('.add-reading-dvd', "uw dvd is toegevegd aan de dvd lijst\n");
-
-let filterbuttons = (button,checkbox,showresults) => {
-    let buttontest = document.querySelector(button);
-    let checkboxtest = document.querySelector(checkbox.checked);
-    let showresulttest = document.querySelector(showresults);/*hier moet een match met de gevonden boeken komen*/
-    // 2x sport dus als checbox sport is aangevinkt en overeenkomt met  de 2boeken laat resultaat zien
-    // kijken naar searchfunction
-    // var x = document.getElementById("myCheck").checked;
-    let geselecteerdeItems = document.querySelectorAll(' input:checked');
-    // todo kijken naar pizza project van docent
-    buttontest.addEventListener('click', () => {
-        books.forEach((book) => {
-            if(checkboxtest === true&& checkboxtest === book){
-                showresulttest.style.display='grid';
-                book.classList.remove('')/*weghealen de classes die geen sport zijn*/
-            }
-            else {
-                showresulttest.innerHTML='geen resultaat';
-            }
-        });
-
-    });
-
-
-    // let rest = document.querySelector('.reset');
-    //
-    // rest.onclick = () => {
-    //     for (let i = 0; i < li.length; i++) {
-    //         li[i].style.display = "grid"; //laat de resultaten weer zien
-    //     }
-    // }
-}
-// todo debuggen javascirpt code https://www.jetbrains.com/help/webstorm/debugging-javascript-in-chrome.html#debugging_js_on_built_in_server_example
-filterbuttons('.filter__filterbutton','.filter__input-checkboxes','.showresults');
