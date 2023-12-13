@@ -555,6 +555,7 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
 
 }
 
+
 .text-boete {
     transition: all 1s ease-out;
     /*translate: 100vw 0;*/
@@ -570,10 +571,10 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
 }
 
 summary:hover { /*hover over de details van meer info*/
-    background-color: #43194D;
-    color: #FFFFFFFF;
-    width: 30em;
-    transform: scale(1);
+    /*background-color: #43194D;*/
+    /*color: #FFFFFFFF;*/
+    /*width: 30em;*/
+    /*transform: scale(1);*/
 
 }
 
