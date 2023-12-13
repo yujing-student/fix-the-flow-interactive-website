@@ -160,10 +160,13 @@ let filterbuttons = (button,checkbox,showresults) => {
     // 2x sport dus als checbox sport is aangevinkt en overeenkomt met  de 2boeken laat resultaat zien
     // kijken naar searchfunction
     // var x = document.getElementById("myCheck").checked;
+    let geselecteerdeItems = document.querySelectorAll(' input:checked');
+    // todo kijken naar pizza project van docent
     buttontest.addEventListener('click', () => {
         books.forEach((book) => {
             if(checkboxtest === true&& checkboxtest === book){
                 showresulttest.style.display='grid';
+                book.classList.remove('')/*weghealen de classes die geen sport zijn*/
             }
             else {
                 showresulttest.innerHTML='geen resultaat';
