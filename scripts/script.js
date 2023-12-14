@@ -144,3 +144,4 @@ const addList = (button, message, books) => {
 }
 addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n", '.figure-image-title-book__title-book-link');
 addList('.add-reading-dvd', "uw dvd is toegevegd aan de dvd lijst\n", '.figure-image-title-book__title-book-link');
+/*todo de lijsten moeten nog apaart kijken naar books dat moet apart en let list*/
