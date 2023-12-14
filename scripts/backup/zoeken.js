@@ -365,3 +365,18 @@ const addList = (button,text) => {
 }
 addList('.add-reading-list','uw boekd is toegevoegd aan de dvd lijst');
 addList('.add-reading-dvd','uw dvd is toegevoegd aan de dvd lijst');
+const filterloop = () => {/*openen van alle filters in 1 keer*/
+    let formresults = document.querySelectorAll(".filter-button");
+    let button = document.querySelector('.open-filters')
+    formresults.forEach(form => {
+        button.addEventListener('click', () => {
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = "none";
+            }
+        })
+    })
+
+}
+filterloop();

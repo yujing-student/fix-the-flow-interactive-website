@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="welkompagina van de oba,
+    u bent nu op de wlekompagina van de oba" name="description">
+
+    <!-- Link to CSS -->
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Link to boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="image/favicon-32x32.png" rel="icon" type="image/png">
+
+    <!-- Link to JavaScript script -->
+    <script defer src="./scripts/script.js"></script><!--geen defer vanwege error in w3c validator-->
+
+    <title>leeslijst</title>
+    <!--    hier werkt de rode knp weer niet oorzaak niet bekend-->
+</head>
+<body><!--https://dequeuniversity.com/screenreaders/-->
+<nav class="sidebar close" tabindex="0">
+    <!--https://www.w3.org/WAI/tutorials/menus/structure/-->
+    <header>
+        <div class="image-text">
+            <div class="image">
+                <a href="index.html"> <img alt="Gebruiker-foto" src="image/AmberFoto.jpeg"></a>
+            </div>
+
+            <div class="text nav-text">
+                <p class="name">Amber van de Reijden</p>
+                <p class="profession" tabindex="0">5 jaar lid</p>
+            </div>
+        </div>
+
+        <i aria-label="uitklappen navigatiemenu" class='bx bx-chevron-right toggle' role="button" tabindex="0"></i>
+    </header>
+
+    <div class="menu-bar" tabindex="0">
+        <div class="menu">
+            <ul class="">
+                <li class="search-box">
+                    <i class='bx bx-search icon' tabindex="0"></i>
+                    <label>
+                        <input name="search" placeholder="Zoek..." type="search">
+                        <!--                        <button type="submit"></button>-->
+                    </label>
+                </li>
+            </ul>
+
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="index.html">
+                        <i class='bx bx-home icon'></i>
+                        <span class="text nav-text">Welkom</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://pommelienn.github.io/the-client-website/">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text-long nav-text">Overzicht abonnement</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-home icon'></i>
+                        <span class="text nav-text">Leeslijst</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://wingsvn.github.io/look-and-feel-corporate-identity/">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text-long nav-text">Uitleningen en verlengen</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://annevd.github.io/look-and-feel-corporate-identity/">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Uitleengeschiedenis</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://lisagjh.github.io/look-and-feel-corporate-identity/home.html">
+                        <i class='bx bx-bookmark icon'></i> <span
+                            class="text-long nav-text">Diensten en Producten</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-pie-chart-alt icon'></i>
+                        <span class="text nav-text">Betaalgeschiedenis</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-heart icon'></i>
+                        <span class="text nav-text">Reserveringen</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">Deposito</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text-long nav-text">Tellerstand abonnement</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <ul>
+                <li class="">
+                    <a href="https://pommelienn.github.io/the-client-website/">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Uitloggen</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+</nav>
+<!--https://www.jetbrains.com/help/webstorm/mastering-keyboard-shortcuts.html#choose-keymap-->
+<main class="home">
+    <div tabindex="0"><!--tabindex word gebruikt zodat dit element gevonden kan worden door de tab toets-->
+        <figure class="text"><img alt="logo" height="44" src="image/oba-20.png" width="84"></figure>
+
+        <div class="grid-container" tabindex="0">
+            <ul class="arrayreadlist"></ul>
+        </div>
+
+
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
