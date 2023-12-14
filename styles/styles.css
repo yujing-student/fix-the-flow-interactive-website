@@ -29,7 +29,7 @@
     --body-color: #E4E9F7; /*achtergrondkleur*/
     --sidebar-color-white: #FFFFFF;
     --background-color-buttons-white: #FFFFFF; /*dit teogeovoegd  kleur van de oba*/
-    --primary-color-red: #E61C24; /*kleur van de oba*/
+    --primary-color-green: #12f62e; /*kleur van de oba*/
     --primary-color-light-licht-blauwe-achtergrondkleur: #F6F5FF;
     --toggle-color-licht-grijs: #D9D9D9; /*kleur van de oba*/
     --text-color-zwart: #000000; /*kleur van de oba**/
@@ -90,7 +90,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 ::selection {
-    background-color: var(--primary-color-red);
+    background-color: var(--primary-color-green);
     color: #fff;
 }
 
@@ -229,7 +229,7 @@ header .image-text .profession {
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
-    background-color: var(--primary-color-red);
+    background-color: var(--primary-color-green);
     color: var(--sidebar-color-white);
     border-radius: 50%;
     display: flex;
@@ -285,7 +285,7 @@ body.dark .sidebar header .toggle {
 }
 
 .sidebar li a:hover {
-    background-color: var(--primary-color-red);
+    background-color: var(--primary-color-green);
 }
 
 .sidebar li a:hover .icon,
@@ -572,10 +572,10 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
 }
 
 summary:hover { /*hover over de details van meer info*/
-    /*background-color: #43194D;*/
-    /*color: #FFFFFFFF;*/
-    /*width: 30em;*/
-    /*transform: scale(1);*/
+    background-color: var(--primary-color-green);
+    color: #FFFFFFFF;
+    width: 30em;
+    transform: scale(1);
 
 }
 
@@ -598,14 +598,14 @@ button, .filter__filterbutton { /*filterbutton staat lager in de forms*/
 }
 
 button:hover {
-    background-color: var(--primary-color-red);
+    background-color: var(--primary-color-green);
     cursor: pointer;
     /*text-decoration-color: white;*/
     color: white;
 }
 
 .filter__input-checkboxes:hover {
-    background-color: var(--primary-color-red);
+    background-color: var(--primary-color-green);
     cursor: pointer;
     /*text-decoration-color: white;*/
     color: white;
@@ -655,6 +655,9 @@ form label {
     font-size: 1rem;
     /*height: 2.5rem;*/
 }
+#form__input-searchfunciton:focus{
+    background-color: #bdfc8a;
+}
 
 
 .item-filter { /*afstand tussen de filter buttons*/
@@ -668,7 +671,7 @@ form label {
 
 /*forms met daarin bem toegepast*/
 .filter__collaps-open-function-boeken, .filter__collaps-open-funtion-boeken-second,
-.filter__collaps-open-funtion-boeken-third,.filter-form { /*dit zijn de buttons in de lijst en op deze pagina voor meer info*/
+.filter__collaps-open-funtion-boeken-third, .filter-form { /*dit zijn de buttons in de lijst en op deze pagina voor meer info*/
     display: none;
 }
 
@@ -700,10 +703,11 @@ a:nth-child(1) {
 }
 
 a:hover { /*hover over de linkjes*/
-    color: var(--primary-color-red);
+    color: var(--primary-color-green);
     cursor: pointer;
 }
-.afterclick{
+
+.afterclick {
     background-color: #cccccc;
     /*color: #cccccc;*/
     box-shadow: none;

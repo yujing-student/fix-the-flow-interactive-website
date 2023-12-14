@@ -37,10 +37,10 @@ function books() {
 books();
 
 function showdivresults(results, grid, buttonpress) {/*carousel laten zien*/
-
     let divresults = document.querySelector(results);
     let divresultsGrid = document.querySelector(grid);
     let button = document.querySelector(buttonpress);
+
     button.addEventListener('click', function () {
         let displaydivresults = window.getComputedStyle(divresults, divresultsGrid).display;/*https://developer.mozilla.org/en-US/docs/web/api/window*/
         /*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
@@ -73,12 +73,7 @@ showFormsCheckboxes(".filter__collapsible-books", ".filter__collaps-open-functio
 showFormsCheckboxes(".filter__collapsible-books-second", ".filter__collaps-open-funtion-books-second");
 showFormsCheckboxes(".filter__collapsible-books-third", ".filter__collaps-open-funtion-books-third");
 
-
-// filtershow();
-
-
-
-const searfucntion2 = () => {
+const searfucntion = () => {
     let button = document.querySelector('.i--search');
     let listbooks = document.querySelectorAll('.hide-li-sign');
 
@@ -106,14 +101,12 @@ const searfucntion2 = () => {
 
     rest.addEventListener('click', () => {
         for (let i = 0; i < listbooks.length; i++) {
-            listbooks[i].style.display = "block"; //laat de resultaten weer zien
+            listbooks[i].style.display = "block"; //show results
         }
     });
 }
-searfucntion2();// https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/
+searfucntion();// https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/
 
-
-// je moet een foreach hebben op de boeken dat als het boek is toegevoegd dat de title van het boek word toegevoegd en niet de button
 const addList = (button, message, books) => {
     let buttons = document.querySelectorAll(button);/*select all buttons with specific class*/
     let bookTitles = document.querySelectorAll(books);/*select booktitles with specific class*/
@@ -132,9 +125,9 @@ const addList = (button, message, books) => {
             displayListBooks.push(bookTitle); // Push the title of book to the array
             console.log(`array: ${displayListBooks}`);/*show the array*/
 
-            list.innerHTML='';/*exmpty list*/
+            list.innerHTML = '';/*exmpty list*/
             // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/#method-1-using-the-for-loop
-            displayListBooks.forEach(book =>{/*loop throug array*/
+            displayListBooks.forEach(book => {/*loop throug array*/
                 let li = document.createElement('li');/*make a li element*/
                 li.textContent = book;/*put title of book in li*/
                 list.appendChild(li);/*add li to list which is a ul */
