@@ -58,8 +58,9 @@
     /*gridtemplate*/
     --grid-template-areas-indeling: "item1 item1" "item2 item4" "item3 item3";
 
-    --grid-template-columns-indeling-contianer: 1fr 1fr;
-    --grid-template-columns-indeling-filters: 20em 1fr;
+    --grid-template-columns-layoout-contianer: 1fr 1fr;
+    --grid-template-columns-layout-filters: 20em 1fr;
+    --grid-template-columns-layout-ul: 1fr 1fr 1fr;
 
 
 }
@@ -739,7 +740,7 @@ a:hover { /*hover over de linkjes*/
         display: grid;
         grid-template-areas:
        var(--grid-template-areas-indeling);
-        grid-template-columns:var(--grid-template-columns-indeling-contianer)
+        grid-template-columns:var(--grid-template-columns-layoout-contianer)
 
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
         /*padding: 1em;*/
@@ -832,7 +833,7 @@ a:hover { /*hover over de linkjes*/
     .grid-container {
         display: grid;
         grid-template-areas:   var(--grid-template-areas-indeling);
-        grid-template-columns: var(--grid-template-columns-indeling-contianer);
+        grid-template-columns: var(--grid-template-columns-layoout-contianer);
 
 
     }
@@ -891,6 +892,7 @@ a:hover { /*hover over de linkjes*/
     .grid-books-blocks { /*dit zijn de boeken die getoond worden*/
         display: grid;
         grid-template-areas: "boek1 boek2";
+        grid-template-columns:1fr 1fr;
 
     }
 
@@ -986,6 +988,7 @@ a:hover { /*hover over de linkjes*/
     .grid-books-blocks {
         display: grid;
         grid-template-areas: "boek1 boek2 boek3";
+        grid-template-columns:var(--grid-template-columns-layout-ul);
         gap: 2em;
     }
 
@@ -1065,6 +1068,7 @@ a:hover { /*hover over de linkjes*/
         display: grid;
         grid-template-areas: "boek1 boek2 boek3 boek4";
         gap: 2em;
+        grid-template-columns: 15em 15em 15em 15em;
     }
 
     .figure-image-title-book { /*positioneren van de boeken en de tekst*/
