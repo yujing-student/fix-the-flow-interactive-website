@@ -18,7 +18,7 @@ voor de oba maak ik een welkompagina gemaakt op basis van een bestaande huisstij
 de foto's zijn niet zo goed gelukt daarom kunt u het beste naar de pagina zelf gaan klik hier: <a href="https://yujing-student.github.io/fix-the-flow-interactive-website/">https://yujing-student.github.io/fix-the-flow-interactive-website</a>
 
 <br>
-wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link: [https://github.com/yujing-student/look-and-feel-corporate-identity/wiki](https://github.com/yujing-student/fix-the-flow-interactive-website/wiki)
+wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link: <a href='https://github.com/yujing-student/fix-the-flow-interactive-website/wiki'>wiki</a>
 <br>
 <h2>foto's van de pagina per apperaat</h2>
 <details><summary>
@@ -198,49 +198,16 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
     ```
 
 
-    function searchfunction() {
-    // https://www.w3schools.com/howto/howto_js_filter_lists.asp bron waar ik code gekopieerd heb
-    let input, filter, listbooks, a, i, txtValue;
-    input = document.getElementById('form__input-searchfunciton');
-    listbooks = document.querySelectorAll('.hide-li-sign')
-    filter = input.value.toUpperCase();//controleren hoofdletters
-    let button = document.querySelector('.i--search');
-
-
-    // forloop waar i het boeknummer is en alle boeken nagelopen worden
-    button.addEventListener('click', function (){
-    for (i = 0; i < listbooks.length; i++) {
-    a = listbooks[i].getElementsByTagName("a")[0];/*begin bij de1ste a href*/
-
-    txtValue = a.textContent || a.innerText;/*checken of een letter of woord erin zit*/
-
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    listbooks[i].style.display = "";/*indien gevonden laat het resultaat zien*/
-    } else {
-    listbooks[i].style.display = "none";
-    }
-    }
-    });
-
-
-    let rest = document.querySelector('.reset');
-
-    rest.addEventListener('click', function () {
-    // Selecteer alle li-elementen met hide lis sign ofwel listbooks
-    for (let i = 0; i < listbooks.length; i++) {
-    listbooks[i].style.display = "block"; //laat de resultaten weer zien
-    }
-    });
-    }
+   
     ```
 
 </details>
 
 ## programmeertalen
 klik op de link om de volledige code te zien
-<li><a href="https://github.com/yujing-student/look-and-feel-corporate-identity/blob/main/index.html">Html</a></li>
-<li><a href="https://github.com/yujing-student/look-and-feel-corporate-identity/blob/main/styles/styles.css">Css</a></li>
-<li><a href="https://github.com/yujing-student/look-and-feel-corporate-identity/blob/main/scripts/script.js">Javascript</a></li>
+<li><a href="">Html</a></li>
+<li><a href="">Css</a></li>
+<li><a href="">Javascript</a></li>
 
 In de code kunt u zien hoe ik dit heb gerealiseerd de navbar heb ik niet gemaakt die erin staat die is door
 Amber gemaakt <a href ="https://github.com/Amberhva/fix-the-flow-interactive-website">link naar haar repository</a>
