@@ -5,7 +5,8 @@ De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 # welkompagina voor de oba
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 Ik heb voor de oba een welkompagina gemaakt zodat de gebruiker direct ziet wat diegene kan doen op de oba mijn omgeving
-<img width="1728" alt="Schermafbeelding 2023-11-28 104526" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/7a89071c-e8e9-4ab1-92e1-2d3c07273641">
+![image](https://github.com/yujing-student/fix-the-flow-interactive-website/assets/100352887/a3cb2ec2-bafe-4926-9ab2-3c28e65fb10d)
+
 
 
 
