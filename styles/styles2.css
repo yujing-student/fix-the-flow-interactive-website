@@ -56,9 +56,15 @@
     --with-15em: 15em;
 
     /*gridtemplate*/
-    --grid-template-areas-indeling: "item1 item1" "item2 item4" "item3 item3";
+    --gridcontainer-template-areas-indeling: "item1 item1"
+    "item2 item4"
+    "item3 item3";
 
     --grid-template-columns-layoout-contianer: 1fr 1fr;
+
+    --gridfilter-template-areas-indeling:'item1 item2'
+                                        'item1 item4';
+    --grid-gap-column:4em;
     --grid-template-columns-layout-filters: 20em 1fr;
     --grid-template-columns-layout-ul: 1fr 1fr 1fr;
 
@@ -442,7 +448,7 @@ td, tr {
 
 /*algemeen*/
 .showresults { /*verbergen van showresults met boeken een volledige div met daarin de 2 grid item-filters*/
-    display: none;
+    /*display: none;*/
     color: var(--text-color-zwart);
 }
 
@@ -474,19 +480,8 @@ td, tr {
             /*margin: 0 1em 0 0;*/
 
         }
-
-        @media (min-width: 1em)  and (max-width: 47em) {
-            /*media query voor tekst in de inleiding grit item1 linksboven*/
-            .to-long-text-margin {
-                margin-bottom: 1em;
-
-            }
-
-            .margin-filter {
-                margin-top: 2em;
-            }
-
-
+        .readinglist{
+           margin-top: 3em;
         }
 
 
@@ -519,6 +514,7 @@ td, tr {
         }
 
 
+
     }
 
     .grid-container-filter {
@@ -533,6 +529,32 @@ td, tr {
         padding: 1em;
     }
 
+    .all-filters-grid {
+        display: grid;
+        grid-template-areas: "onderwerpen  genre auteur"
+    "meer leelsijst emty";
+    }
+
+    .item-filter {
+        width: 10em;
+        /*gap: 1em;*/
+        margin: 0 1em 0 0;
+
+    }
+
+    .item-filter:nth-child(1) {
+        background-color: red;
+        grid-area: onderwerpen;
+    }
+
+    .item-filter:nth-child(2) {
+
+        grid-area: genre;
+    }
+
+    .item-filter:nth-child(3) {
+        grid-area: auteur;
+    }
 
 }
 
@@ -655,7 +677,8 @@ form label {
     font-size: 1rem;
     /*height: 2.5rem;*/
 }
-#form__input-searchfunciton:focus{
+
+#form__input-searchfunciton:focus {
     background-color: #bdfc8a;
 }
 
@@ -715,6 +738,7 @@ a:hover { /*hover over de linkjes*/
 }
 
 .grid-container-filter {
+    display: none;
 
     margin-top: 1em;
 }
@@ -743,7 +767,7 @@ a:hover { /*hover over de linkjes*/
     .grid-container {
         display: grid;
         grid-template-areas:
-       var(--grid-template-areas-indeling);
+       var(--gridcontainer-template-areas-indeling);
         grid-template-columns:var(--grid-template-columns-layoout-contianer)
 
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
@@ -752,13 +776,7 @@ a:hover { /*hover over de linkjes*/
 
     }
 
-    .grid-container-filter {
 
-        display: none;
-        grid-template-areas:
-       var(--grid-template-areas-indeling);
-        grid-template-columns:var(--grid-template-columns-indeling)
-    }
 
     .to-long-text-margin {
         /*margin-bottom: 1em;*/
@@ -791,11 +809,12 @@ a:hover { /*hover over de linkjes*/
         /*background-color: #ae8aff;*/
         /*grid-template-columns: 10em;*/
     }
-
     .grid-container-filter {
+
         display: none;
-        grid-template-areas: "item1 item2";
-        grid-template-columns: var(--grid-template-columns-indeling);
+        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-layout-filters);
+        column-gap: var(--grid-gap-column);
     }
 
     .grid-item-filter:nth-child(1) {
@@ -836,7 +855,7 @@ a:hover { /*hover over de linkjes*/
     /*mini ipad*/
     .grid-container {
         display: grid;
-        grid-template-areas:   var(--grid-template-areas-indeling);
+        grid-template-areas:   var(--gridcontainer-template-areas-indeling);
         grid-template-columns: var(--grid-template-columns-layoout-contianer);
 
 
@@ -879,8 +898,9 @@ a:hover { /*hover over de linkjes*/
 
     .grid-container-filter {
         display: none;
-        grid-template-areas: "item1 item2";
-        grid-template-columns:var(--grid-template-columns-indeling)
+        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-layout-filters);
+        column-gap: var(--grid-gap-column);
     }
 
     .grid-item-filter:nth-child(1) {
@@ -917,7 +937,7 @@ a:hover { /*hover over de linkjes*/
     /*contianer*/
     .grid-container {
         display: grid;
-        grid-template-areas:   var(--grid-template-areas-indeling);
+        grid-template-areas:   var(--gridcontainer-template-areas-indeling);
         grid-template-columns: 35em 1fr;
         /*1specifiek item container*/
 
@@ -968,8 +988,9 @@ a:hover { /*hover over de linkjes*/
     /*contianer filter de onderste cotnaienr*/
     .grid-container-filter {
         display: none;
-        grid-template-areas: "item1 item2";
-        grid-template-columns:var(--grid-template-columns-indeling)
+        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-layout-filters);
+        column-gap: var(--grid-gap-column);
     }
 
     .grid-item-filter:nth-child(1) {
@@ -1010,24 +1031,30 @@ a:hover { /*hover over de linkjes*/
 @media (min-width: 100em) {
     .grid-container {
         display: grid;
-        grid-template-areas:   var(--grid-template-areas-indeling);
+        grid-template-areas:   var(--gridcontainer-template-areas-indeling);
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
         /*grid-template-columns: 50em 1fr;*/
     }
 
     .grid-container-filter {
         display: none;
-        grid-template-areas: "item1 item2";
-        grid-template-columns:var(--grid-template-columns-indeling)
+        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-layout-filters);
+        column-gap: var(--grid-gap-column);
     }
 
     .grid-item-filter:nth-child(1) {
         grid-area: item1;
-        /*background-color: rgba(88, 255, 83, 0.57);*/
+        background-color: rgba(88, 255, 83, 0.57);
     }
 
     .grid-item-filter:nth-child(2) {
         grid-area: item2;
+        background-color: red;
+
+    }
+    .grid-item-filter:nth-child(3) {
+        grid-area: item4;
 
     }
 
