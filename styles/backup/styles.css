@@ -442,7 +442,7 @@ td, tr {
 
 /*algemeen*/
 .showresults { /*verbergen van showresults met boeken een volledige div met daarin de 2 grid item-filters*/
-    display: none;
+    /*display: none;*/
     color: var(--text-color-zwart);
 }
 
@@ -715,6 +715,7 @@ a:hover { /*hover over de linkjes*/
 }
 
 .grid-container-filter {
+    display: none;
 
     margin-top: 1em;
 }
