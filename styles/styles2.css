@@ -29,7 +29,7 @@
     --body-color: #E4E9F7; /*achtergrondkleur*/
     --sidebar-color-white: #FFFFFF;
     --background-color-buttons-white: #FFFFFF; /*dit teogeovoegd  kleur van de oba*/
-    --primary-color-green: #12f62e; /*kleur van de oba*/
+    --primary-color-green: #6BFF90; /*kleur van de oba*/
     --primary-color-light-licht-blauwe-achtergrondkleur: #F6F5FF;
     --toggle-color-licht-grijs: #D9D9D9; /*kleur van de oba*/
     --text-color-zwart: #000000; /*kleur van de oba**/
@@ -95,8 +95,8 @@ body::-webkit-scrollbar-thumb {
     border-radius: 4px;
 }
 
-::selection {
-    background-color: var(--primary-color-green);
+::selection {/*selecteren van tekst met muis*/
+    background-color:#161313;
     color: #fff;
 }
 
@@ -575,6 +575,24 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
     /*margin-bottom: var(--margin-bottom-1em);*/
     margin-bottom: 2em;
     cursor: pointer;
+    border: 2px solid #000; /* Black border */
+
+}
+details:hover{
+    background-color:  var(--primary-color-green);
+}
+summary{
+    font-weight: bold; /* Bold text */
+}
+summary:hover { /*hover over de details van meer info*/
+    /*background-color: var(--primary-color-green);*/
+    /*color: rgba(255, 51, 51, 0.96);*/
+    width: 30em;
+    /*transform: scale(1.1);*/
+    text-decoration-line: underline;
+    /*text-decoration-color: #5ac5e5;*/
+
+    /*color: #f00;*/
 
 }
 
@@ -593,13 +611,6 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
     display: block;
 }
 
-summary:hover { /*hover over de details van meer info*/
-    background-color: var(--primary-color-green);
-    color: #FFFFFFFF;
-    width: 30em;
-    transform: scale(1);
-
-}
 
 
 /*dit zijn de buttons*/
@@ -623,7 +634,7 @@ button:hover {
     background-color: var(--primary-color-green);
     cursor: pointer;
     /*text-decoration-color: white;*/
-    color: white;
+    color: #000;
 }
 
 .filter__input-checkboxes:hover {
