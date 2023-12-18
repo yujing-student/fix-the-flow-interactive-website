@@ -1006,13 +1006,13 @@ a:hover { /*hover over de linkjes*/
 }
 
 
-.text-boete{
+.text-fine{
     transition: all 1s ease-out;
     translate: 100vw 0;
     display: none;
 }
 /*als je op de button hover toon dan de tekst vanaf de linkerkant  */
-.button-boeken:hover + .text-boete{
+.button-books:hover + .text-fine{
     transition: 1s;
     translate:  0 0;
 

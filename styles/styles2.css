@@ -56,7 +56,8 @@
     --with-15em: 15em;
 
     /*gridtemplate*/
-    --gridcontainer-template-areas-indeling: "item1 item1"
+    --gridcontainer-template-areas-indeling:
+            "item1 item1"
     "item2 item4"
     "item3 item3";
 
@@ -412,7 +413,7 @@ body.dark .home .text {
 
 /*boetetabel*/
 /*dit is de naam boek en datum inleveren*/
-
+/*mycode*/
 .paragraph-table-info {
     margin-top: 0.4em;
 }
@@ -533,17 +534,17 @@ td, tr {
         display: grid;
         grid-template-areas: "onderwerpen  genre auteur"
     "meer leelsijst emty";
+
     }
 
     .item-filter {
         width: 10em;
         /*gap: 1em;*/
-        margin: 0 1em 0 0;
+        /*margin: 0 1em 0 0;*/
 
     }
 
     .item-filter:nth-child(1) {
-        background-color: red;
         grid-area: onderwerpen;
     }
 
@@ -571,7 +572,7 @@ p:nth-of-type(2) { /*dit is Welkom op uw persoonlijke pagina van de website van 
 }
 
 
-details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
+details:nth-child(n+1):nth-child(-n+16) { /*nummer 1 tot en met 5 van meer info*/
     /*margin-bottom: var(--margin-bottom-1em);*/
     margin-bottom: 2em;
     cursor: pointer;
@@ -581,13 +582,13 @@ details:nth-child(n+1):nth-child(-n+7) { /*nummer 1 tot en met 5 van meer info*/
 details:hover{
     background-color:  var(--primary-color-green);
 }
-summary{
-    font-weight: bold; /* Bold text */
+details summary >*{/*>* this means tat the childeren of the summary have this proporty*/
+    display: inline;/**/
 }
 summary:hover { /*hover over de details van meer info*/
     /*background-color: var(--primary-color-green);*/
     /*color: rgba(255, 51, 51, 0.96);*/
-    width: 30em;
+    /*width: 30em;*/
     /*transform: scale(1.1);*/
     text-decoration-line: underline;
     /*text-decoration-color: #5ac5e5;*/
@@ -595,16 +596,19 @@ summary:hover { /*hover over de details van meer info*/
     /*color: #f00;*/
 
 }
+details summary >*{/*>* this means tat the childeren of the summary have this proporty*/
+    display: inline;/**/
+}
 
 
-.text-boete {
+.text-fine {
     transition: all 1s ease-out;
     /*translate: 100vw 0;*/
     display: none;
 }
 
 /*als je op de button hover toon dan de tekst vanaf de linkerkant  */
-.button-boeken:hover + .text-boete {
+.button-books:hover + .text-fine {
     transition: 1s;
     /*translate:  0 0;*/
 
@@ -949,7 +953,7 @@ a:hover { /*hover over de linkjes*/
     .grid-container {
         display: grid;
         grid-template-areas:   var(--gridcontainer-template-areas-indeling);
-        grid-template-columns: 35em 1fr;
+        grid-template-columns: var(--grid-template-columns-layoout-contianer);
         /*1specifiek item container*/
 
 
@@ -1046,39 +1050,9 @@ a:hover { /*hover over de linkjes*/
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
         /*grid-template-columns: 50em 1fr;*/
     }
-
-    .grid-container-filter {
-        display: none;
-        grid-template-areas: "item1 item2"
-    "item1 item4";
-        grid-template-columns:var(--grid-template-columns-layout-filters);
-        column-gap: var(--grid-gap-column);
-        align-items: start;
-    }
-    .grid-item-filter{
-        min-width: 0; /* Add this line */
-        min-height: 0; /* Add this line */
-        overflow: auto; /* Add this line */
-    }
-
-    .grid-item-filter:nth-child(1) {
-        grid-area: item1;
-        background-color: rgba(88, 255, 83, 0.57);
-    }
-
-    .grid-item-filter:nth-child(2) {
-        grid-area: item2;
-        background-color: red;
-        /*height: 5em;*/
-
-    }
-    .grid-item-filter:nth-child(3) {
-        grid-area: item4;
-
-    }
-
     .grid-item:nth-child(2) {
         grid-area: item2;
+        height: 25em;
 
         /*grid-template-columns: 50em;*/
         margin: 0 1em 0 0;
@@ -1107,11 +1081,39 @@ a:hover { /*hover over de linkjes*/
     .grid-item:nth-child(1) {
         margin: 0 1em 0 0;
     }
-
     p:nth-child(3), .introduction-text-book-overview { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
         max-width: 35em;
 
     }
+
+
+
+    .grid-container-filter {
+        display: none;
+        grid-template-areas: "item1 item2"
+    "item1 item4";
+        grid-template-columns:20em 1fr;
+        column-gap: var(--grid-gap-column);
+
+    }
+
+    .grid-item-filter:nth-child(1) {
+        grid-area: item1;
+        /*background-color: rgba(88, 255, 83, 0.57);*/
+    }
+
+    .grid-item-filter:nth-child(2) {
+        grid-area: item2;
+        /*background-color: red;*/
+        /*height: 5em;*/
+
+    }
+    .grid-item-filter:nth-child(3) {
+        grid-area: item4;
+
+    }
+
+
 
 
     .grid-books-blocks {

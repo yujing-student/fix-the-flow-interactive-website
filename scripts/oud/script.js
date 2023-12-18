@@ -28,7 +28,7 @@ modeSwitch.addEventListener("click", () => {
 
 /*hierboven code amber*/
 function books() {
-    let button = document.querySelector(".button-boeken");
+    let button = document.querySelector(".button-books");
     button.addEventListener('click', () => {
         window.location.href = "boete.index-oud.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
     });
