@@ -63,7 +63,7 @@ function showdivresults(clickdown) {/*carousel laten zien*/
 showdivresults('#form__input-searchfunciton');
 
 // showdivresults('.showresults','.grid-container-filter','.i--search');
-function showFormsCheckboxes(buttonSelect, formSelect) {/*paramters meegeven vanwege duplicate code */
+function showFormsCheckboxes(buttonSelect, formSelect) {/*use parameter*/
     // selecteer elementen
     let formCheckbox = document.querySelector(formSelect);/*formCheckbox is de naam met darin 3 verschillende forms */
     let button = document.querySelector(buttonSelect);
@@ -134,13 +134,13 @@ document.querySelector('#form__input-searchfunciton').addEventListener('keydown'
             }
         })
     });
-    let rest = document.querySelector('.reset');
-
-    rest.addEventListener('click', () => {
-        for (let i = 0; i < listbooks.length; i++) {
-            listbooks[i].style.display = "block"; //show results
-        }
-    });
+    // let rest = document.querySelector('.reset');
+    //
+    // rest.addEventListener('click', () => {
+    //     for (let i = 0; i < listbooks.length; i++) {
+    //         listbooks[i].style.display = "block"; //show results
+    //     }
+    // });
 }
 searfucntion('#form__input-searchfunciton');
 // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/
@@ -150,6 +150,7 @@ const addList = (button, message, books) => {
     let bookTitles = document.querySelectorAll(books);/*select booktitles with specific class*/
     let displayListBooks = [];
     let list = document.querySelector(".arrayreadlist");
+    let showreadinglist = document.querySelector("h3");
     buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
         /*book is each book and total are there 18 books*/
         button.addEventListener('click', () => {/*click event if 1 button is pressed from all buttons*/
@@ -162,7 +163,7 @@ const addList = (button, message, books) => {
             let bookTitle = bookTitles[book].textContent;/*store the content of the book in a booktitle the booktitles are 18 books and book is 1 every time*/
             displayListBooks.push(bookTitle); // Push the title of book to the array
             console.log(`array: ${displayListBooks}`);/*show the array*/
-            list.scrollIntoView({
+            showreadinglist.scrollIntoView({
                 behavior:"smooth"
             });
 

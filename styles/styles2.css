@@ -1049,9 +1049,16 @@ a:hover { /*hover over de linkjes*/
 
     .grid-container-filter {
         display: none;
-        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-areas: "item1 item2"
+    "item1 item4";
         grid-template-columns:var(--grid-template-columns-layout-filters);
         column-gap: var(--grid-gap-column);
+        align-items: start;
+    }
+    .grid-item-filter{
+        min-width: 0; /* Add this line */
+        min-height: 0; /* Add this line */
+        overflow: auto; /* Add this line */
     }
 
     .grid-item-filter:nth-child(1) {
@@ -1062,6 +1069,7 @@ a:hover { /*hover over de linkjes*/
     .grid-item-filter:nth-child(2) {
         grid-area: item2;
         background-color: red;
+        /*height: 5em;*/
 
     }
     .grid-item-filter:nth-child(3) {
