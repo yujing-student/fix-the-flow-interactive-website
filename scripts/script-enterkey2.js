@@ -44,17 +44,17 @@ function showdivresults(clickdown) {/*carousel laten zien*/
 
     if (clickdown.key === "Enter") {
         clickdown.preventDefault();
-            divresultsGrid.style.display = 'grid';
-            divresultsGrid.scrollIntoView({
-                behavior:"smooth"
-            });
-            // divresultsGrid.style.gridArea=''
+        divresultsGrid.style.display = 'grid';
+        divresultsGrid.scrollIntoView({
+            behavior: "smooth"
+        });
+        // divresultsGrid.style.gridArea=''
     }
     button.addEventListener('click', function () {
         /*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
-            divresultsGrid.style.display = 'grid';
+        divresultsGrid.style.display = 'grid';
         divresultsGrid.scrollIntoView({
-            behavior:"smooth"
+            behavior: "smooth"
         });
     })
 
@@ -82,9 +82,9 @@ showFormsCheckboxes(".filter__collapsible-books-second", ".filter__collaps-open-
 showFormsCheckboxes(".filter__collapsible-books-third", ".filter__collaps-open-funtion-books-third");
 
 
-document.querySelector('#form__input-searchfunciton').addEventListener('keydown',searfucntion);
+document.querySelector('#form__input-searchfunciton').addEventListener('keydown', searfucntion);
 
- function searfucntion (clickdown2)  {
+function searfucntion(clickdown2) {
     let button = document.querySelector('.i--search');
     let listbooks = document.querySelectorAll('.hide-li-sign');
 
@@ -102,7 +102,7 @@ document.querySelector('#form__input-searchfunciton').addEventListener('keydown'
 
                     li.style.display = "";/*empyt li because the name of book is going in the string*/
                     li.scrollIntoView({
-                        behavior:"smooth"
+                        behavior: "smooth"
                     });
                 } else {
                     li.style.display = "none";/*if not found display none*/
@@ -134,15 +134,11 @@ document.querySelector('#form__input-searchfunciton').addEventListener('keydown'
             }
         })
     });
-    // let rest = document.querySelector('.reset');
-    //
-    // rest.addEventListener('click', () => {
-    //     for (let i = 0; i < listbooks.length; i++) {
-    //         listbooks[i].style.display = "block"; //show results
-    //     }
-    // });
 }
+
 searfucntion('#form__input-searchfunciton');
+
+
 // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/
 
 const addList = (button, message, books) => {
@@ -164,7 +160,7 @@ const addList = (button, message, books) => {
             displayListBooks.push(bookTitle); // Push the title of book to the array
             console.log(`array: ${displayListBooks}`);/*show the array*/
             showreadinglist.scrollIntoView({
-                behavior:"smooth"
+                behavior: "smooth"
             });
 
             list.innerHTML = '';/*exmpty list*/
@@ -177,6 +173,7 @@ const addList = (button, message, books) => {
         });
     });
 }
+
 addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n", '.figure-image-title-book__title-book-link');
 addList('.add-reading-dvd', "uw dvd is toegevegd aan de dvd lijst\n", '.figure-image-title-book__title-book-link');
 /*todo de lijsten moeten nog apaart kijken naar books dat moet apart en let list*/

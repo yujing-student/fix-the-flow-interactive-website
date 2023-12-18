@@ -56,16 +56,12 @@
     --with-15em: 15em;
 
     /*gridtemplate*/
-    --gridcontainer-template-areas-indeling:
-            "item1 item1"
-    "item2 item4"
-    "item3 item3";
+    --gridcontainer-template-areas-indeling: "item1 item1" "item2 item4" "item3 item3";
 
     --grid-template-columns-layoout-contianer: 1fr 1fr;
 
-    --gridfilter-template-areas-indeling:'item1 item2'
-                                        'item1 item4';
-    --grid-gap-column:4em;
+    --gridfilter-template-areas-indeling: 'item1 item2' 'item1 item4';
+    --grid-gap-column: 4em;
     --grid-template-columns-layout-filters: 20em 1fr;
     --grid-template-columns-layout-ul: 1fr 1fr 1fr;
 
@@ -96,8 +92,8 @@ body::-webkit-scrollbar-thumb {
     border-radius: 4px;
 }
 
-::selection {/*selecteren van tekst met muis*/
-    background-color:#161313;
+::selection { /*selecteren van tekst met muis*/
+    background-color: #161313;
     color: #fff;
 }
 
@@ -481,8 +477,9 @@ td, tr {
             /*margin: 0 1em 0 0;*/
 
         }
-        .readinglist{
-           margin-top: 3em;
+
+        .readinglist {
+            margin-top: 3em;
         }
 
 
@@ -513,7 +510,6 @@ td, tr {
 
 
         }
-
 
 
     }
@@ -565,7 +561,7 @@ p:nth-of-type(2) { /*dit is Welkom op uw persoonlijke pagina van de website van 
 
 }
 
-.inleiding-welkom {
+.introduction-welcome {
     width: 15em;
     height: 3em;
     margin: 1em 0 4em 0em;
@@ -579,12 +575,15 @@ details:nth-child(n+1):nth-child(-n+16) { /*nummer 1 tot en met 5 van meer info*
     border: 2px solid #000; /* Black border */
 
 }
-details:hover{
-    background-color:  var(--primary-color-green);
+
+details:hover {
+    background-color: var(--primary-color-green);
 }
-details summary >*{/*>* this means tat the childeren of the summary have this proporty*/
-    display: inline;/**/
+
+details summary > * { /*>* this means tat the childeren of the summary have this proporty*/
+    display: inline; /**/
 }
+
 summary:hover { /*hover over de details van meer info*/
     /*background-color: var(--primary-color-green);*/
     /*color: rgba(255, 51, 51, 0.96);*/
@@ -596,8 +595,9 @@ summary:hover { /*hover over de details van meer info*/
     /*color: #f00;*/
 
 }
-details summary >*{/*>* this means tat the childeren of the summary have this proporty*/
-    display: inline;/**/
+
+details summary > * { /*>* this means tat the childeren of the summary have this proporty*/
+    display: inline; /**/
 }
 
 
@@ -614,7 +614,6 @@ details summary >*{/*>* this means tat the childeren of the summary have this pr
 
     display: block;
 }
-
 
 
 /*dit zijn de buttons*/
@@ -792,7 +791,6 @@ a:hover { /*hover over de linkjes*/
     }
 
 
-
     .to-long-text-margin {
         /*margin-bottom: 1em;*/
 
@@ -824,6 +822,7 @@ a:hover { /*hover over de linkjes*/
         /*background-color: #ae8aff;*/
         /*grid-template-columns: 10em;*/
     }
+
     .grid-container-filter {
 
         display: none;
@@ -1050,6 +1049,7 @@ a:hover { /*hover over de linkjes*/
         /*grid-template-columns: var(--grid-template-columns-indeling);*/
         /*grid-template-columns: 50em 1fr;*/
     }
+
     .grid-item:nth-child(2) {
         grid-area: item2;
         height: 25em;
@@ -1081,11 +1081,11 @@ a:hover { /*hover over de linkjes*/
     .grid-item:nth-child(1) {
         margin: 0 1em 0 0;
     }
+
     p:nth-child(3), .introduction-text-book-overview { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
         max-width: 35em;
 
     }
-
 
 
     .grid-container-filter {
@@ -1108,12 +1108,11 @@ a:hover { /*hover over de linkjes*/
         /*height: 5em;*/
 
     }
+
     .grid-item-filter:nth-child(3) {
         grid-area: item4;
 
     }
-
-
 
 
     .grid-books-blocks {
