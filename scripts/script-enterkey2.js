@@ -53,8 +53,8 @@ function showdivresults(clickdown) {/*carousel laten zien*/
     button.addEventListener('click', function () {
         /*https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle*/
         divresultsGrid.style.display = 'grid';
-        divresultsGrid.scrollIntoView({
-            behavior: "smooth"
+        divresultsGrid.scrollIntoView({/*sroll to the queryselector*/
+            behavior: "smooth"/*https://developer.mozilla.org/en-US/docs/web/api/element/scrollintoview*/
         });
     })
 
@@ -65,15 +65,15 @@ showdivresults('#form__input-searchfunciton');
 // showdivresults('.showresults','.grid-container-filter','.i--search');
 function showFormsCheckboxes(buttonSelect, formSelect) {/*use parameter*/
     // selecteer elementen
-    let formCheckbox = document.querySelector(formSelect);/*formCheckbox is de naam met darin 3 verschillende forms */
+    let formCheckbox = document.querySelector(formSelect);/*formCheckbox is the ame with 3 forms */
     let button = document.querySelector(buttonSelect);
-    formCheckbox.style.transition = "opacity " + "0.1s ease-out";/*transitie toevoegen*/
-    button.addEventListener('click', () => {/*bij het klikken van 1 van de buttons*/
-        if (formCheckbox.style.display === "none") {
-            formCheckbox.style.display = "block";
+    formCheckbox.style.transition = "opacity " + "0.1s ease-out";/*css transition add*/
+    button.addEventListener('click', () => {/*when click 1 button do :*/
+        if (formCheckbox.style.display === "none") {/*if proporty is set to none*/
+            formCheckbox.style.display = "block";/*set it to blick*/
         } else {
             formCheckbox.style.display = "none";/*https://www.w3schools.com/js/js_function_parameters.asp*//*https://www.w3schools.com/js/js_function_definition.asp*/
-        }
+        }/*keep it to block*/
     });
 }
 
@@ -148,15 +148,15 @@ const addList = (button, message, books) => {
     let list = document.querySelector(".arrayreadlist");
     let showreadinglist = document.querySelector("h3");
     buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
-        /*book is each book and total are there 18 books*/
+        /*book is 1 book every time from the 18 loops total because there are 18 books*/
         button.addEventListener('click', () => {/*click event if 1 button is pressed from all buttons*/
             console.log(`Button clicked: ${button.textContent}`);/*show button and the content*/
             button.disabled = true;/*make button not clicalble*/
             button.textContent = message;/*show the message*/
             button.classList.add('afterclick');/*give this css proporties to the */
-            console.log(`${book}:booknummer`)/*log the number of the nodelist*/
+            console.log(`${book}:booknummer`);/*log the number of the nodelist*/
 
-            let bookTitle = bookTitles[book].textContent;/*store the content of the book in a booktitle the booktitles are 18 books and book is 1 every time*/
+            let bookTitle = bookTitles[book].textContent;/*store the content of the book in a booktitle the booktitles are 18 books and book is 1 book every time*/
             displayListBooks.push(bookTitle); // Push the title of book to the array
             console.log(`array: ${displayListBooks}`);/*show the array*/
             showreadinglist.scrollIntoView({
