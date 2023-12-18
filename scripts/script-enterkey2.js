@@ -30,7 +30,7 @@ modeSwitch.addEventListener("click", () => {
 function books() {
     let button = document.querySelector(".button-boeken");
     button.addEventListener('click', () => {
-        window.location.href = "boete.index-oud.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
+        window.location.href = "boete.index.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
     });
 }
 
