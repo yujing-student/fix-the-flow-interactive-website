@@ -31,7 +31,7 @@ bookpage();
 showFormsCheckboxes(".filter__collapsible-books", ".filter__collaps-open-function-books");
 showFormsCheckboxes(".filter__collapsible-books-second", ".filter__collaps-open-funtion-books-second");
 showFormsCheckboxes(".filter__collapsible-books-third", ".filter__collaps-open-funtion-books-third");
-showreesults();/*checkgrid zit in showresults*/
+ShowBooks();/*checkgrid zit in showresults*/
 searchBooks();
 eventsClick('.i--search','#form__input-searchfunciton');
 addList('.add-reading-list', "uw boek is toegevegd aan de leeslijst lijst\n", '.figure-image-title-book__title-book-link');
@@ -45,23 +45,22 @@ function bookpage () {
         });
     }
 }
-function checkgrid (){
+function ShowGridContainer (){
     let divresultsGrid = document.querySelector('.grid-container-filter');
     divresultsGrid.style.display = 'grid';
     divresultsGrid.scrollIntoView({/*sroll to the queryselector*/
         behavior: "smooth"/*https://developer.mozilla.org/en-US/docs/web/api/element/scrollintoview*/
     });
 }
-function showreesults () {
+function ShowBooks () {
     let buttonicon = document.querySelector('.i--search')
     buttonicon.addEventListener('click', () => {
-        checkgrid();
+        ShowGridContainer();
     })
-
     document.querySelector('#form__input-searchfunciton').addEventListener('keydown', (click) => {
         if (click.key === "Enter") {
             click.preventDefault();
-            checkgrid();
+            ShowGridContainer();
         }
     });
 }

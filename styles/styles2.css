@@ -43,18 +43,16 @@
     --tran-05: all 0.3s ease;
 
 
-    /*eigen custom proporties*/
+    /*own custom proporties*/
     /*    border*/
-    --border-color-line: 0.1em solid #000000;
     /*afstand margin*/
     --margin-1em: 1em;
-    --margin-top-3em: 3em;
     --margin-top-2em: 2em;
     --margin-bottom-1em: 1em;
     --margin-top-5em: 5em;
 
     /*    widt*/
-    --with-15em: 15em;
+
 
     /*gridtemplate*/
     --gridcontainer-template-areas-indeling: "item1 item1" "item2 item4" "item3 item4";
