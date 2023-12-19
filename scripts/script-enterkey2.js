@@ -27,20 +27,23 @@ modeSwitch.addEventListener("click", () => {
 
 
 /*hierboven code amber*/
-function books() {
-    let button = document.querySelector(".button-books");
-    button.addEventListener('click', () => {
-        window.location.href = "boete.index.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
-    });
-}
 
-books();
+const bookpage = () =>{
+    let button = document.querySelector('.button-books');
+    if(button){
+        button.addEventListener('click', () => {
+            window.location.href = "boete.index.html";/*https://developer.mozilla.org/en-US/docs/web/api/window/location*/
+        });
+    }
+}
+bookpage();
+
+// books();
 document.querySelector('#form__input-searchfunciton').addEventListener('keydown', showdivresults);
 
 function showdivresults(clickdown) {/*carousel laten zien*/
     let divresultsGrid = document.querySelector('.grid-container-filter');
     let button = document.querySelector('.i--search');
-    let clickform = document.querySelector('#form__input-searchfunciton');
 
     if (clickdown.key === "Enter") {
         clickdown.preventDefault();
@@ -82,7 +85,7 @@ showFormsCheckboxes(".filter__collapsible-books-second", ".filter__collaps-open-
 showFormsCheckboxes(".filter__collapsible-books-third", ".filter__collaps-open-funtion-books-third");
 
 
-document.querySelector('#form__input-searchfunciton').addEventListener('keydown', searfucntion);
+
 
 function searfucntion(clickdown2) {
     let button = document.querySelector('.i--search');
@@ -136,9 +139,53 @@ function searfucntion(clickdown2) {
     });
 }
 
-searfucntion('#form__input-searchfunciton');
+// searfucntion('#form__input-searchfunciton');
+const eventsClick = (button,clickdown2) =>{
+    document.querySelector('#form__input-searchfunciton').addEventListener('keydown',eventsClick);
+    if (clickdown2.key === "Enter") {
+        clickdown2.preventDefault();
+        searchBooks();
+    }
+    let buttonicon = document.querySelector(button)
+    buttonicon.addEventListener('click', () => {
+        searchBooks();
+    })
+
+}
+eventsClick('.i--search','#form__input-searchfunciton')
+
+const searchBooks = () =>{
+    let listbooks = document.querySelectorAll('.hide-li-sign');
+
+    let inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*save search and keep in mind capital letters*/
+    listbooks.forEach(li => {/*for loop throug all li items with a specific class */
+        let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*variable bookclasses with a specific class on the li*/
+        if (bookclasses) {/*checken of variabe exist*/
+            let titleBook = bookclasses.textContent || bookclasses.innerText;/*content of book or innertext save in variable titlebook*/
+            // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/touppercase
+
+            if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*check on capitalletters and of search equal is to the title of book*/
+                // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/indexof
+
+                li.style.display = "";/*empyt li because the name of book is going in the string*/
+                li.scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                li.style.display = "none";/*if not found display none*/
+
+            }
+        }
+    })
+
+}
+searchBooks();
+// document.querySelector('#form__input-searchfunciton').addEventListener('keydown',search2);
 
 
+
+
+// document.querySelector('#form__input-searchfunciton').addEventListener('keydown',searfucntion);
 // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/
 
 const addList = (button, message, books) => {
@@ -167,7 +214,7 @@ const addList = (button, message, books) => {
             // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/#method-1-using-the-for-loop
             displayListBooks.forEach(book => {/*loop throug array*/
                 let li = document.createElement('li');/*make a li element*/
-                li.textContent = book;/*put title of book in li*/
+                li.textContent = book;/*put title of book in variable of li*/
                 list.appendChild(li);/*add li to list which is a ul */
             })
         });
