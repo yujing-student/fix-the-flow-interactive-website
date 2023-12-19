@@ -738,6 +738,12 @@ a:hover { /*hover over de linkjes*/
     display: none;
 
 }
+.remove-readinglist{
+    display: none;
+    color: red;
+    font-size: 1.5em;
+    /*background-color: var(--primary-color-light-licht-blauwe-achtergrondkleur);*/
+}
 
 .grid-books-blocks {
     margin: 0 2em 0 2em;

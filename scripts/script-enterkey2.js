@@ -121,6 +121,8 @@ function addList  (button, message, books) {
     let bookTitles = document.querySelectorAll(books);/*select booktitles with specific class*/
     let displayListBooks = [];
     let list = document.querySelector(".arrayreadlist");
+
+    let removeButton = document.querySelector('.remove-readinglist');
     let showreadinglist = document.querySelector("h3");
     buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
         /*book is 1 book every time from the 18 loops total because there are 18 books*/
@@ -145,6 +147,12 @@ function addList  (button, message, books) {
                 li.textContent = book;/*put title of book in variable of li*/
                 list.appendChild(li);/*add li to list which is a ul */
             })
+            removeButton.addEventListener('click', () => {
+              /*if click on bin button remove the book of the displaylsistbooks
+              * remove the button with : uw boek is toegevaad aan */
+
+            })
+
         });
     });
 }
