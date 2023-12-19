@@ -25,19 +25,14 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
 <details><summary>
    mobiel
 </summary>
-    <img width="375" alt="image" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/e15304f5-82c3-4d62-9dae-d5f12493338e">
-    <br>
-    <img width="375" alt="image" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/e90627a6-c830-48ba-a283-0d0631b8c5b0">
+
 </details>
 
 <details>
     <summary>
         tablet
     </summary>
-    <img alt="20231128_083615175_iOS" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/05407d0f-df67-4612-a1ca-dbaf20a017c4"
-         width="1069">
-    <img alt="20231128_083512790_iOS" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/34f11b73-07c1-49ea-ba22-b17228d47d60"
-         width="1080">
+
 
 </details>
 <details>
@@ -45,7 +40,7 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
         Desktop
     </summary>
     <img width="951" alt="image" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/dd2ebb09-f444-41dc-b00c-e83f3047e3bb">
-    <img width="942" alt="image" src="https://github.com/yujing-student/look-and-feel-corporate-identity/assets/100352887/47048260-937c-4e5f-aa22-e8af89aa47fd">
+   
 
 </details>
 <h2>uitleg over code</h2>
@@ -63,8 +58,8 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
     <summary>
         uitleg over de html code deels zie programmeertalen voor de volledige code
     </summary>
-    ```
 
+    ```
     <div class="grid-container" tabindex="0">
         <section class="grid-item" tabindex="0">
             <!--                <h1 tabindex="0">Homepagina</h1>-->
@@ -127,68 +122,79 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
     <summary>
         uitleg over de css code voor ipad formaat
     </summary>
-    ```
-   
-    @media (min-width: 60em)  and (max-width: 80em) {
+    ```css
+
+    @media (min-width: 48em)  and (max-width: 60em) {
     /*mini ipad*/
     .grid-container {
-    display: grid;
-    grid-template-areas:   var(--grid-template-areas-indeling);
-    grid-template-columns: var(--grid-template-columns-indeling);
-
-
+        display: grid;
+        grid-template-areas:var(--gridcontainer-template-areas-indeling);
+        grid-column-gap: var(--grid-template-columns-layoout-contianer);
+        row-gap: 2em;
+        column-gap: 3em;
     }
+
 
     .grid-item:nth-child(1) {
-    margin: 0 1em 0 0;
+        grid-area: item1;
+
     }
 
-    p:nth-child(3), .inleiding-text-boeken-overzicht { /*dit is Welkom op uw persoonlijke pagina van de website van de OBA. p */
-    max-width: 30em;
+    .grid-item:nth-child(2) {
+        grid-area: item2;
+
+    }
+
+    .grid-item:nth-child(3) {
+        grid-area: item4;
+
+    }
+
+    .grid-item:nth-child(4) {
+        grid-area: item3;
+
     }
 
     .grid-container-filter {
-    display: grid;
-    grid-template-areas:   var(--grid-template-areas-indeling);
-    grid-template-columns: var(--grid-template-columns-indeling);
-    margin-top: 5em;
 
+        display: none;
+        grid-template-areas: var(--gridfilter-template-areas-indeling);
+        grid-template-columns:var(--grid-template-columns-layout-filters);
+        column-gap: var(--grid-gap-column);
+
+        margin-top: var(--margin-top-5em);
+    }
+
+    .grid-item-filter:nth-child(1) {
+        grid-area: item1;
 
     }
 
-    .grid-item-filter:nth-child(1) { /*meer info*/
-    grid-area: inleiding-zoekvak;
-
-
-    }
-
-    .grid-item-filter, .grid-item-filter:nth-child(2) { /*meer info*/
-    grid-area: meer-info-filters;
-    margin-bottom: var(--margin-bottom-1em);
-
+    .grid-item-filter:nth-child(2) {
+        grid-area: item2;
 
     }
 
-    .grid-item-filter, .grid-item-filter:nth-child(3) { /*meer info*/
-    grid-area: boeken-overzicht-boeken;
-
+    .grid-item-filter:nth-child(2) {
+        grid-area: item2;
 
     }
 
-    .grid-books-blocks { /*dit zijn de boeken die getoond worden*/
-    display: grid;
-    grid-template-areas: "boek1 boek2";
-    }
 
     .figure-image-title-book { /*positioneren van de boeken en de tekst*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
 
     }
+
+    .figure-image-title-book__title-book-link { /*kind van div*/
+        display: grid;
+        align-self: center;
+    }
+}`
     ```
 
 </details>
@@ -196,19 +202,102 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
     <summary>
         uitleg over de javascript code zoekfunctie
     </summary>
-    ```
+<br>
 
 
-   
-    ```
+```javascript
+function searchBooks () {
+    let listbooks = document.querySelectorAll('.hide-li-sign');
+    let inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*save search and keep in mind capital letters*/
+    listbooks.forEach(li => {/*for loop throug all li items with a specific class */
+        let bookclasses = li.querySelector('.figure-image-title-book__title-book-link');/*variable bookclasses with a specific class on the li*/
+        if (bookclasses) {/*checken of variabe exist*/
+            let titleBook = bookclasses.textContent || bookclasses.innerText;/*content of book or innertext save in variable titlebook*/
+            // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/touppercase
+
+            if (titleBook.toUpperCase().indexOf(inputUser) > -1) {/*check on capitalletters and of search equal is to the title of book*/
+                // https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/string/indexof
+
+                li.style.display = "";/*empyt li because the name of book is going in the string*/
+                li.scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                li.style.display = "none";/*if not found display none*/
+
+            }
+        }
+    })
+}
+function eventsClick (button) {
+    let buttonicon = document.querySelector(button)
+    buttonicon.addEventListener('click', () => {
+        searchBooks();
+    })
+
+    document.querySelector('#form__input-searchfunciton').addEventListener('keydown', (click) => {
+        if (click.key === "Enter") {
+            click.preventDefault();
+            searchBooks();
+        }
+    });
+
+}
+
+```
+
+uitleg over voeg toe aan leeslisjt functie 
+<br>
+```javascript
+function addList  (button, message, books) {
+let buttons = document.querySelectorAll(button);/*select all buttons with specific class*/
+let bookTitles = document.querySelectorAll(books);/*select booktitles with specific class*/
+let displayListBooks = [];
+let list = document.querySelector(".arrayreadlist");
+
+    let removeButton = document.querySelector('.remove-readinglist');
+    let showreadinglist = document.querySelector("h3");
+    buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
+        /*book is 1 book every time from the 18 loops total because there are 18 books*/
+        button.addEventListener('click', () => {/*click event if 1 button is pressed from all buttons*/
+            console.log(`Button clicked: ${button.textContent}`);/*show button and the content*/
+            button.disabled = true;/*make button not clicalble*/
+            button.textContent = message;/*show the message*/
+            button.classList.add('afterclick');/*give this css proporties to the */
+            // console.log(`${book}:booknummer`);/*log the number of the nodelist*/
+
+            let bookTitle = bookTitles[book].textContent;/*store the content of the book in a booktitle the booktitles are 18 books and book is 1 book every time*/
+            displayListBooks.push(bookTitle); // Push the title of book to the array
+            console.log(`array: ${displayListBooks}`);/*show the array*/
+            showreadinglist.scrollIntoView({
+                behavior: "smooth"
+            });
+
+            list.innerHTML = '';/*exmpty list*/
+            // https://www.geeksforgeeks.org/how-to-creating-html-list-from-javascript-array/#method-1-using-the-for-loop
+            displayListBooks.forEach(book => {/*loop throug array*/
+                let li = document.createElement('li');/*make a li element*/
+                li.textContent = book;/*put title of book in variable of li*/
+                list.appendChild(li);/*add li to list which is a ul */
+            })
+            removeButton.addEventListener('click', () => {
+              /*if click on bin button remove the book of the displaylsistbooks
+              * remove the button with : uw boek is toegevaad aan */
+
+            })
+
+        });
+    });
+}
+```
 
 </details>
 
 ## programmeertalen
 klik op de link om de volledige code te zien
-<li><a href="">Html</a></li>
-<li><a href="">Css</a></li>
-<li><a href="">Javascript</a></li>
+<li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/index.html">Html</a></li>
+<li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/styles/styles2.css">Css</a></li>
+<li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/scripts/script-enterkey2.js">Javascript</a></li>
 
 In de code kunt u zien hoe ik dit heb gerealiseerd de navbar heb ik niet gemaakt die erin staat die is door
 Amber gemaakt <a href ="https://github.com/Amberhva/fix-the-flow-interactive-website">link naar haar repository</a>
