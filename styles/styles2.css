@@ -596,6 +596,7 @@ details summary > * { /*>* this means tat the childeren of the summary have this
 .showresults { /*verbergen van showresults met boeken een volledige div met daarin de 2 grid item-filters*/
     /*display: none;*/
     color: var(--text-color-zwart);
+    margin-top: 5em;
 }
 
 /*als je op de button hover toon dan de tekst vanaf de linkerkant  */
