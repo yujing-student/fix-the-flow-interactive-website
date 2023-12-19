@@ -59,7 +59,8 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
         uitleg over de html code deels zie programmeertalen voor de volledige code
     </summary>
 
-    ```
+```html
+
     <div class="grid-container" tabindex="0">
         <section class="grid-item" tabindex="0">
             <!--                <h1 tabindex="0">Homepagina</h1>-->
@@ -114,7 +115,7 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
 
 
     </div>
-    ```
+```
 
 </details>
 
@@ -122,8 +123,8 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
     <summary>
         uitleg over de css code voor ipad formaat
     </summary>
-    ```css
 
+```css
     @media (min-width: 48em)  and (max-width: 60em) {
     /*mini ipad*/
     .grid-container {
@@ -194,8 +195,9 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
         display: grid;
         align-self: center;
     }
-}`
-    ```
+}
+```
+
 
 </details>
 <details>
@@ -206,6 +208,7 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
 
 
 ```javascript
+
 function searchBooks () {
     let listbooks = document.querySelectorAll('.hide-li-sign');
     let inputUser = document.getElementById('form__input-searchfunciton').value.toUpperCase();/*save search and keep in mind capital letters*/
@@ -243,12 +246,12 @@ function eventsClick (button) {
     });
 
 }
-
 ```
 
 uitleg over voeg toe aan leeslisjt functie 
 <br>
 ```javascript
+
 function addList  (button, message, books) {
 let buttons = document.querySelectorAll(button);/*select all buttons with specific class*/
 let bookTitles = document.querySelectorAll(books);/*select booktitles with specific class*/
@@ -294,7 +297,7 @@ let list = document.querySelector(".arrayreadlist");
 </details>
 
 ## programmeertalen
-klik op de link om de volledige code te zien
+Klik op de link om de volledige code te zien
 <li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/index.html">Html</a></li>
 <li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/styles/styles2.css">Css</a></li>
 <li><a href="https://github.com/yujing-student/fix-the-flow-interactive-website/blob/main/scripts/script-enterkey2.js">Javascript</a></li>
