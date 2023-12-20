@@ -122,7 +122,8 @@ function addList  (button, message, books) {
     let list = document.querySelector(".arrayreadlist");
 
     let removeButton = document.querySelector('.remove-readinglist');
-    let showreadinglist = document.querySelector("h3");
+    let showreadinglist = document.querySelector(".readinglist");
+    console.log('showreadinglist',showreadinglist);
     buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
         /*book is 1 book every time from the 18 loops total because there are 18 books*/
         button.addEventListener('click', () => {/*click event if 1 button is pressed from all buttons*/
@@ -135,6 +136,7 @@ function addList  (button, message, books) {
             let bookTitle = bookTitles[book].textContent;/*store the content of the book in a booktitle the booktitles are 18 books and book is 1 book every time*/
             displayListBooks.push(bookTitle); // Push the title of book to the array
             console.log(`array: ${displayListBooks}`);/*show the array*/
+
             showreadinglist.scrollIntoView({
                 behavior: "smooth"
             });
@@ -146,11 +148,11 @@ function addList  (button, message, books) {
                 li.textContent = book;/*put title of book in variable of li*/
                 list.appendChild(li);/*add li to list which is a ul */
             })
-            removeButton.addEventListener('click', () => {
-              /*if click on bin button remove the book of the displaylsistbooks
-              * remove the button with : uw boek is toegevaad aan */
-
-            })
+            // removeButton.addEventListener('click', () => {
+            //   /*if click on bin button remove the book of the displaylsistbooks
+            //   * remove the button with : uw boek is toegevaad aan */
+            //
+            // })
 
         });
     });
