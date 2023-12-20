@@ -67,15 +67,20 @@ function ShowBooks () {
 function showFormsCheckboxes(buttonSelect, formSelect) {/*use parameter*/
     // selecteer elementen
     let formCheckbox = document.querySelector(formSelect);/*formCheckbox is the ame with 3 forms */
-    let button = document.querySelector(buttonSelect);
-    formCheckbox.style.transition = "opacity " + "0.1s ease-out";/*css transition add*/
-    button.addEventListener('click', () => {/*when click 1 button do :*/
-        if (formCheckbox.style.display === "none") {/*if proporty is set to none*/
-            formCheckbox.style.display = "block";/*set it to blick*/
-        } else {
-            formCheckbox.style.display = "none";/*https://www.w3schools.com/js/js_function_parameters.asp*//*https://www.w3schools.com/js/js_function_definition.asp*/
-        }/*keep it to block*/
-    });
+    let buttonform = document.querySelector(buttonSelect);
+    // formCheckbox.style.transition = "opacity " + "0.1s ease-out";/*css transition add*/
+    if(buttonform){
+        console.log(`check of deze button bestaan: ${buttonform.textContent}`)
+        buttonform.addEventListener('click', () => {/*when click 1 button do :*/
+            formCheckbox.style.transition = "opacity " + "0.1s ease-out";/*css transition add*/
+            if (formCheckbox.style.display === "none") {/*if proporty is set to none*/
+                formCheckbox.style.display = "block";/*set it to blick*/
+            } else {
+                formCheckbox.style.display = "none";/*https://www.w3schools.com/js/js_function_parameters.asp*//*https://www.w3schools.com/js/js_function_definition.asp*/
+            }/*keep it to block*/
+        });
+    }
+
 }
 
 function searchBooks () {
@@ -123,7 +128,7 @@ function addList  (button, message, books) {
 
     let removeButton = document.querySelector('.remove-readinglist');
     let showreadinglist = document.querySelector(".readinglist");
-    console.log('showreadinglist',showreadinglist);
+    console.log(`laat de readinglist zien dus de leeslijst: ${showreadinglist}`);
     buttons.forEach((button, book) => {/*forloop through all buttons of the nodelist and use 2 calbackfunctions*/
         /*book is 1 book every time from the 18 loops total because there are 18 books*/
         button.addEventListener('click', () => {/*click event if 1 button is pressed from all buttons*/

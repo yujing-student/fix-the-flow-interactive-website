@@ -104,7 +104,7 @@ body.dark {
     --primary-color-light-licht-blauwe-achtergrondkleur: #3a3b3c;
     --toggle-color-licht-grijs: #fff;
     --text-color-zwart: #fff; /*dit doet niks #ccc*/
-    /*color: white;*/
+    color: white;
 }
 
 /* ===== Sidebar ===== */
@@ -302,7 +302,7 @@ body.dark .sidebar li a:hover .text {
 }
 
 .sidebar .menu-bar {
-    height: calc(100% - 55px);
+    height: calc(100% - 80px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -459,7 +459,7 @@ td, tr {
             "inleiding "/*regel1*/
         "boeken-overzicht-boeken"
             "meer-info-filters";
-        row-gap: 2em;
+        row-gap: 1em;
 
 
         .grid-item, .grid-item-filter { /*dit zijn de 3 kinderen met daarin de inhoud ide steeds meebeweegt*/
@@ -522,7 +522,7 @@ td, tr {
         "boeken-overzicht-boeken"
             "meer-info-filters";
         padding: 1em;
-        margin-top: var(--margin-top-5em);
+        /*margin-top: var(--margin-top-5em);*/
 
     }
 
@@ -560,7 +560,10 @@ p:nth-of-type(2) { /*this is Welkom op uw persoonlijke pagina van de website van
     margin: 1em 0 4em 0;
 }
 
-
+section{
+    /*background-color: red;*/
+    margin-top: 1.5em;
+}
 details:nth-child(n+1):nth-child(-n+16) { /*number 1 to number 5 meer info*/
     /*margin-bottom: var(--margin-bottom-1em);*/
     margin-bottom: 2em;
@@ -578,7 +581,7 @@ details summary > * { /*>* this means tat the childeren of the summary have this
 }
 
 summary:hover { /*hover over de details van meer info*/
-    text-decoration-line: underline;
+    /*text-decoration-line: underline;*/
 
 
 }
@@ -708,6 +711,14 @@ form label {
 
 /*einde forms*/
 
+/*leeslijst*/
+.readinglist{
+    margin-top: 5em;
+}
+.arrayreadlist{
+    background-color: #ccc8c8;
+    width: 28em;
+}
 /*verbergen li vanege books*/
 .hide-li-sign {
     list-style-type: none;
@@ -723,7 +734,7 @@ a:nth-child(1) {
 }
 
 a:hover { /*hover over de linkjes*/
-    color: var(--primary-color-green);
+    /*color: var(--primary-color-green);*/
     cursor: pointer;
 }
 
@@ -738,12 +749,7 @@ a:hover { /*hover over de linkjes*/
     display: none;
 
 }
-.remove-readinglist{
-    display: none;
-    color: red;
-    font-size: 1.5em;
-    /*background-color: var(--primary-color-light-licht-blauwe-achtergrondkleur);*/
-}
+
 
 .grid-books-blocks {
     margin: 0 2em 0 2em;
@@ -857,6 +863,7 @@ a:hover { /*hover over de linkjes*/
 
     .grid-item:nth-child(2) {
         grid-area: item2;
+        margin-right: 3em;
 
     }
 
