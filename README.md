@@ -5,6 +5,7 @@ De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 # welkompagina voor de oba
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 Ik heb voor de oba een welkompagina gemaakt zodat de gebruiker direct ziet wat diegene kan doen op de oba mijn omgeving
+<img width="552" alt="image" src="https://github.com/yujing-student/fix-the-flow-interactive-website/assets/100352887/f570be2e-a60b-4825-859c-9029485ffc99">
 ![image](https://github.com/yujing-student/fix-the-flow-interactive-website/assets/100352887/a3cb2ec2-bafe-4926-9ab2-3c28e65fb10d)
 
 
@@ -25,6 +26,7 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
 <details><summary>
    mobiel
 </summary>
+<img width="324" alt="image" src="https://github.com/yujing-student/fix-the-flow-interactive-website/assets/100352887/fd225351-386f-4e01-92aa-1e33436d0a67">
 
 </details>
 
@@ -33,6 +35,7 @@ wilt u het proces zien hoe ik tot deze pagina gekomen bent kunt u naar deze link
         tablet
     </summary>
 
+<img width="582" alt="image" src="https://github.com/yujing-student/fix-the-flow-interactive-website/assets/100352887/868de40d-1d54-4058-b04e-1d6764184b2d">
 
 </details>
 <details>
